@@ -45,18 +45,19 @@ class LaraController extends Controller
      */
     public function store(Request $request)
     {
+         /**
     $validatedData = $request->validate([
             'name' => 'required|unique:lara|max:100|min:3',
             'link' => 'required|unique:lara|max:50|min:3',
             'room' => 'max:20',
         ]);
-        
+     */   
         $lara = new Lara();
         $lara->$name = $request->name;
         $lara->$link = $request->link;
         $lara->$room = $request->room;
 
-        $mainpage->save();
+        $lara->save();
   
         return redirect()->action('LaraController@createpage')->with('message', 'Success');
     
