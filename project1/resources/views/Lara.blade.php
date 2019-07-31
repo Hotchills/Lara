@@ -98,7 +98,7 @@
                         <tbody>
                              @foreach($laras as $key=>$lara)
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">{{$key+1}}</th>
                                 <td>$lara->name</td>
                                 <td>$lara->link</td>
                                 <td>$lara->adress</td>
@@ -106,7 +106,7 @@
                                 <td>$lara->location</td>
                                 <td>$lara->duration</td>   
                             </tr>
-                      @endarch
+                      @endforeach
                         </tbody>
                     </table>
 
