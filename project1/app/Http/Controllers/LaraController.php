@@ -64,7 +64,7 @@ class LaraController extends Controller
         $lara->info1 = NULL;
         $lara->info2 = NULL;
         $lara->info3 = NULL;
-        $lara->info3 = time;
+        $lara->time = NULL;
         
         $lara->save();
   
