@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Lara;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Illuminate\Http\Request;
 
 class LaraController extends Controller
 {
