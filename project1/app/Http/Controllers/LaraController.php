@@ -19,9 +19,9 @@ class LaraController extends Controller
         return view("/Lara");
         
         
-       if ($lara = Lara::all()) {
+       if ($laras = Lara::all()) {
 
-            return view('Lara', compact('lara'));
+            return view('Lara', compact('laras'));
         }
         abort(404);
         

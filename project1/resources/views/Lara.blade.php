@@ -66,17 +66,17 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+            <div class="top-right links">
+                @auth
+                <a href="{{ url('/home') }}">Home</a>
+                @else
+                <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
+                @if (Route::has('register'))
+                <a href="{{ route('register') }}">Register</a>
+                @endif
+                @endauth
+            </div>
             @endif
 
             <div class="content">
@@ -85,8 +85,31 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-              
+
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             @foreach($laras as $key=>$lara)
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>$lara->name</td>
+                                <td>$lara->link</td>
+                                <td>$lara->adress</td>
+                                 <td>$lara->servername</td>
+                                <td>$lara->location</td>
+                                <td>$lara->duration</td>   
+                            </tr>
+                      @endarch
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
         </div>
