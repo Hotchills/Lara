@@ -57,14 +57,14 @@ class LaraController extends Controller
         $lara->link = $request->link;
         $lara->room = $request->room;
         
-        $lara->adress = NULL;
-        $lara->location = NULL;
-        $lara->duration = NULL;
-        $lara->servername = NULL;
-        $lara->info1 = NULL;
-        $lara->info2 = NULL;
-        $lara->info3 = NULL;
-        $lara->time = NULL;
+        $lara->adress = 0;
+        $lara->location = 0;
+        $lara->duration = 0;
+        $lara->servername = 0;
+        $lara->info1 = 0;
+        $lara->info2 = 0;
+        $lara->info3 = 0;
+        $lara->time = 0;
         
         $lara->save();
   
