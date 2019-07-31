@@ -53,9 +53,9 @@ class LaraController extends Controller
         ]);
      */   
         $lara = new Lara();
-        $lara->$name = $request->name;
-        $lara->$link = $request->link;
-        $lara->$room = $request->room;
+        $lara->name = $request->name;
+        $lara->link = $request->link;
+        $lara->room = $request->room;
 
         $lara->save();
   
