@@ -16,7 +16,7 @@ class LaraController extends Controller
     public function index()
     {
         //
-        return view("/Lara");
+        
         
         
        if ($laras = Lara::all()) {
