@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/Lara', 'LaraController@index')->name('Lara');
+Route::get('/CreateLara', 'LaraController@createpage')->name('CreateLara');
+
+Route::post('/CreateLara', ['uses'=> 'LaraController@store','as'=>'lara.store' ]);
