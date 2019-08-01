@@ -86,7 +86,7 @@ class LaraController extends Controller {
             $lara->location = $request->location;
             $lara->duration = $request->duration;
             $lara->servername = $request->name;
-            $lara->time = Carbon::now();
+            $lara->time = Carbon::now('Europe/Berlin');
             $lara->save();
 
             return response()->json(['message' => 'update done']);

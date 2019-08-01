@@ -88,10 +88,10 @@
                         </td>
                         @endif
 
-                        @if( $lara->duration() < $lara->duration) <td>
+                        @if( $lara->duration() < ($lara->duration * 60)) <td>
                         
                                                      <div class="input-group-append">
-                                <p class="btn  btn-outline-danger" >In use: {{$lara->duration}}h</p>
+                                <p class="btn  btn-outline-danger" >In use: {{$lara->duration()}} / {{$lara->duration}}h</p>
                             </div>
                         </td>
                         @else
