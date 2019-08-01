@@ -12,7 +12,7 @@ class Lara extends Model
       'adress','location','duration','servername','link','room','name','time'
     ];
       public function duration() {
-          $temp = Carbon::createFromDate($this->time);
+          $temp = Carbon::createFromDate($this->updated_at);
           $now = Carbon::now('Europe/Berlin');
           $duration = $temp->diffInMinutes($now) - 120 ;
         //   $duration = Carbon::now('Europe/Berlin')->diffInMinutes($temp);

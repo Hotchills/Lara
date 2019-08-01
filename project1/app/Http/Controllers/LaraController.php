@@ -86,11 +86,12 @@ class LaraController extends Controller {
             $lara->location = $request->location;
             $lara->duration = $request->duration;
             $lara->servername = $request->name;
+            
             if($request->duration == '0'){
                 $lara->time =$lara->created_at;
            
             }else{
-                 $lara->time = Carbon::now('Europe/Berlin');
+                 $lara->time = Carbon::now('Europe/Berlin')->toDateTimeString();
             }
             $lara->save();
 
