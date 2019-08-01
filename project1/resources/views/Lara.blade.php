@@ -86,7 +86,7 @@
 
                         @else
                         <td>N/A
-                            {{Carbon\Carbon::now('Europe/Berlin')}} / {{$lara->time}}
+
                         </td>
                         @endif
 
@@ -147,7 +147,7 @@
                     .done(function (data) {
                         console.log(data.message);
                         console.log(data['message']);
-//window.location.reload();
+window.location.reload();
                     })
                     .fail(function (data) {
                         console.log(data.message);
@@ -195,7 +195,7 @@
                     .done(function (data) {
                         console.log(data.message);
                         console.log(data['message']);
-//window.location.reload();
+window.location.reload();
                     })
                     .fail(function (data) {
                         console.log(data.message);
