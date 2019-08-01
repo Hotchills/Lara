@@ -26,8 +26,8 @@
                     @foreach($laras as $key=>$lara)
                     <tr>
                         <th scope="row">{{$key+1}}</th>
-                        <td><a href="{{$lara->link}}">{{$lara->name}}</a></td>
-                        <td><a href="{{$lara->link}}">{{$lara->link}}</a></td>
+                        <td><a href="{{$lara->link}}" target="_blank">{{$lara->name}}</a></td>
+                        <td><a href="{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
 
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
 
@@ -66,7 +66,7 @@
                 </td>
                 @else
                 @if($lara->adress!='0')
-                <td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}">{{$lara->adress}}</a></td>
+                <td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}" target="_blank">{{$lara->adress}}</a></td>
 
                 @else
                 <td>

@@ -6,24 +6,25 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    LARA
+                   Create new LARA :
                 </div>
 
                 <div class="links">
                     <div class="form-inline">
                         {{Form::open(['route'=>'lara.store','method'=>'POST'])}}
-                        {{Form::label('name','name:')}}
-                        {{Form::text('name','',['class'=>'form-control'])}}
-                    </div>  
+                        {{Form::text('name','name',['class'=>'form-control'])}}
+                    </div>
+                    <br>
                     <div class="form-inline">
-                        {{Form::label('link','link:')}}
+ 
                         {{Form::text('link','link',['class'=>'form-control'])}}
                     </div>  
+                    <br>
                     <div class="form-inline">
-                        {{Form::label('room','room:')}}
+
                         {{Form::text('room','room',['class'=>'form-control'])}}
                     </div> 
-
+<br>
                     {{Form::submit('Create lara',['class'=>'btn btn-primary'])}}    
 
 
