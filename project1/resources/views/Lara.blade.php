@@ -88,9 +88,9 @@
                         </td>
                         @endif
 
-                        @if( $lara->duration() > $lara->duration) <td>{{$lara->duration}}h</td>
+                        @if( $lara->duration() > $lara->duration) <td>{{$lara->duration()}}h</td>
                         @else
-                        <td>Free
+                        <td>Free {{$lara->duration()}}
                         </td>
                         @endif
                         <td >

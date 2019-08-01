@@ -11,7 +11,7 @@ class Lara extends Model
       public function duration() {
           $temp = $this->time;
         //  $duration = $temp->timediffInSeconds(Carbon::now());
-           $duration = Carbon::now()->timediffInSeconds($temp);
+           $duration = Carbon::now()->diffInSeconds($temp);
           
           $duration=$duration/360;
         return $duration;
