@@ -63,9 +63,9 @@
 
                         </td>
                         <td>
-                               <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary savebutton" type="button" id="{{$lara->id}}">Button</butt                                    on>
-                                </div>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary savebutton" type="button" id="{{$lara->id}}">Save</butt                                    on>
+                            </div>
                         </td>
                         @else
                         @if($lara->adress!='0')
@@ -129,13 +129,13 @@
                             </div>
                         </td>
                         @endif
-                                                <td >
-                        <div class="input-group-append">
-                                    <button class="btn btn-danger btn-outline-secondary clearbutton" id="clear{{$lara->id}}" type="button">Clear</button>
-                                </div>
+                        <td >
+                            <div class="input-group-append">
+                                <button class="btn btn-danger btn-outline-secondary clearbutton" id="clear{{$lara->id}}" type="button">Clear</button>
+                            </div>
                         </td>
                         @endif
-                        
+
 
                     </tr>
                     @endforeach
@@ -147,15 +147,15 @@
 </div>
 <script>
     $(document).ready(function () {
-        
+
         $(".clearbutton").click(function () {
             var laraID = $(this).attr("id");
-            laraID= laraID.slice(5);
+            laraID = laraID.slice(5);
             var adress = 0;
             var name = 0;
             var location = 0;
             var duration = 0;
-            
+
             console.log(laraID);
             console.log(adress);
             console.log(name);
@@ -173,17 +173,18 @@
                     .done(function (data) {
                         console.log(data.message);
                         console.log(data['message']);
-
+window.location.reload();
                     })
                     .fail(function (data) {
                         console.log(data.message);
                         console.log(data);
+                        window.location.reload();
                     });
         });
-        
-        
-        
-        
+
+
+
+
 
         $(".savebutton").click(function () {
             var laraID = $(this).attr("id");
@@ -220,11 +221,12 @@
                     .done(function (data) {
                         console.log(data.message);
                         console.log(data['message']);
-
+window.location.reload();
                     })
                     .fail(function (data) {
                         console.log(data.message);
                         console.log(data);
+                        window.location.reload();
                     });
         });
     });
