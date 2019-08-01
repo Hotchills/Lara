@@ -91,7 +91,7 @@
                         @if( $lara->duration() < $lara->duration) <td>
                         
                                                      <div class="input-group-append">
-                                <button class="btn  btn-outline-danger" >{{$lara->duration}}</button>
+                                <p class="btn  btn-outline-danger" >In use: {{$lara->duration}}h</p>
                             </div>
                         </td>
                         @else
