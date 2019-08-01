@@ -19,6 +19,7 @@
                         <th scope="col">servername</th>
                         <th scope="col">location</th>
                         <th scope="col">duration</th>
+                        <th scope="col">#</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,12 +57,15 @@
                                     <option value="6h">6h</option>
                                     <option value="24h">24h</option>
                                 </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary savebutton" type="button" id="{{$lara->id}}">Button</butt                                    on>
-                                </div>
+
 
                             </div>
 
+                        </td>
+                        <td>
+                               <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary savebutton" type="button" id="{{$lara->id}}">Button</butt                                    on>
+                                </div>
                         </td>
                         @else
                         @if($lara->adress!='0')
