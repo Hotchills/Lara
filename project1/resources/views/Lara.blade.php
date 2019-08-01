@@ -49,7 +49,7 @@
                         <td>
                             <div class="input-group mb-3">
 
-                                <select id="duration{{$lara->id}}" class="custom-select" id="inputGroupSelect04" aria-label="Selector">
+                                <select id="duration{{$lara->id}}" class="custom-select" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">
                                     <option selected>Choose...</option>
                                     <option value="30 min">30 min</option>
                                     <option value="1h">1h</option>
@@ -74,9 +74,9 @@
                         @else
                         <td>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="DCSXB link" aria-label="DCSXB link" aria-describedby="button-addon1">
+                                <input type="text" class="form-control" placeholder="DCSXB link" aria-label="DCSXB link" aria-describedby="buttonadress{{$lara->id}}">
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+                                    <button class="btn btn-outline-secondary" type="button" id="buttonadress{{$lara->id}}">Button</button>
                                 </div>
                             </div>
                         </td>
@@ -87,9 +87,9 @@
                         @else
                         <td>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Server name" aria-label="Server name" aria-describedby="button-addon1">
+                                <input type="text" class="form-control" placeholder="Server name" aria-label="Server name" aria-describedby="buttonname{{$lara->id}}">
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+                                    <button class="btn btn-outline-secondary" type="button" id="buttonname{{$lara->id}}">Button</button>
                                 </div>
                             </div>
                         </td>
@@ -101,9 +101,9 @@
                         @else
                         <td>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Server location" aria-label="Server location" aria-describedby="button-addon2">
+                                <input type="text" class="form-control" placeholder="Server location" aria-label="Server location" aria-describedby="buttonlocation{{$lara->id}}">
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                                    <button class="btn btn-outline-secondary" type="button" id="buttonlocation{{$lara->id}}">Button</button>
                                 </div>
                             </div>
                         </td>
@@ -114,7 +114,7 @@
                         <td>
                             <div class="input-group mb-3">
 
-                                <select class="custom-select" id="inputGroupSelect04" aria-label="Selector">
+                                <select class="custom-select" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">
                                     <option selected>Choose...</option>
                                     <option value="30 min">30 min</option>
                                     <option value="1h">1h</option>
