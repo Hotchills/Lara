@@ -146,7 +146,7 @@
                     .done(function (data) {
                         console.log(data.message);
                         console.log(data['message']);
-window.location.reload();
+//window.location.reload();
                     })
                     .fail(function (data) {
                         console.log(data.message);
@@ -194,7 +194,7 @@ window.location.reload();
                     .done(function (data) {
                         console.log(data.message);
                         console.log(data['message']);
-window.location.reload();
+//window.location.reload();
                     })
                     .fail(function (data) {
                         console.log(data.message);
