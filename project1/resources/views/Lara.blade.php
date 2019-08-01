@@ -125,13 +125,14 @@
                             </div>
                         </td>
                         @endif
-                        @endif
-                        
-                        <td >
+                                                <td >
                         <div class="input-group-append">
                                     <button class="btn btn-danger btn-outline-secondary clearbutton" id="clear{{$lara->id}}" type="button">Clear</button>
                                 </div>
                         </td>
+                        @endif
+                        
+
                     </tr>
                     @endforeach
                 </tbody>
