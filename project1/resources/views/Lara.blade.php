@@ -1,57 +1,91 @@
 @extends('layouts.app')
 
 @section('content')
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                <a href="{{ url('/home') }}">Home</a>
-                @else
-                <a href="{{ route('login') }}">Login</a>
 
-                @if (Route::has('register'))
-                <a href="{{ route('register') }}">Register</a>
-                @endif
-                @endauth
-            </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    LARA
-                </div>
-
-                <div class="links">
-
-                    <table class="table table-striped">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">name</th>
-                                <th scope="col">link</th>
-                                <th scope="col">adress</th>
-                                <th scope="col">servername</th>
-                                <th scope="col">location</th>
-                                <th scope="col">duration</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                             @foreach($laras as $key=>$lara)
-                            <tr>
-                                <th scope="row">{{$key+1}}</th>
-                                <td>{{$lara->name}}</td>
-                                <td>{{$lara->link}}</td>
-                                <td>{{$lara->adress}}</td>
-                                <td>{{$lara->servername}}</td>
-                                <td>{{$lara->location}}</td>
-                                <td>{{$lara->duration}}</td>   
-                            </tr>
-                      @endforeach
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
+<div class="container">
+    <div class="content">
+        <div class="title m-b-md">
+            LARA
         </div>
+
+        <div class="links">
+
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">name</th>
+                        <th scope="col">link</th>
+                        <th scope="col">adress</th>
+                        <th scope="col">servername</th>
+                        <th scope="col">location</th>
+                        <th scope="col">duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($laras as $key=>$lara)
+                    <tr>
+                        <th scope="row">{{$key+1}}</th>
+                        <td><a href="{{$lara->link}}">{{$lara->name}}</a></td>
+                        <td><a href="{{$lara->link}}">{{$lara->link}}</a></td>
+                        <td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}">{{$lara->adress}}</a></td>
+                        @if($lara->servername!='0') <td>{{$lara->servername}}</td>
+
+                        @else
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Server name" aria-label="Server name" aria-describedby="button-addon1">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+                                </div>
+                            </div>
+                        </td>
+                        @endif
+
+
+                        @if($lara->location != '0') <td>{{$lara->location}}</td>
+
+                        @else
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Server location" aria-label="Server location" aria-describedby="button-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                                </div>
+                            </div>
+                        </td>
+                        @endif
+
+                        <td>{{$lara->duration}}</td>  
+
+                        @if($lara->duration!='0') <td>{{$lara->duration}}</td>
+                        @else
+                        <td>
+                            <div class="input-group mb-3">
+
+                                <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                    <option selected>Choose...</option>
+                                    <option value="1">30 min</option>
+                                    <option value="2">1h</option>
+                                    <option value="3">2h</option>
+                                    <option value="4">6h</option>
+                                    <option value="5">24h</option>
+                                </select>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">Button</button>
+                                </div>
+
+                            </div>
+                        </td>
+                        @endif
+
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
 
 @endsection
