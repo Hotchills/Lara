@@ -86,18 +86,19 @@
 
                         @else
                         <td>N/A
+                            {{Carbon\Carbon::now('Europe/Berlin')}}/{{$lara->time}}
                         </td>
                         @endif
 
                         @if( $lara->duration() < ($lara->duration * 60)) <td>
-                        
-                                                     <div class="input-group-append">
+
+                            <div class="input-group-append">
                                 <p class="btn  btn-outline-danger" >{{$lara->duration()}}min from {{$lara->duration}}h</p>
                             </div>
                         </td>
                         @else
                         <td> 
-                             <div class="input-group-append">
+                            <div class="input-group-append">
                                 <button class="btn  btn-outline-success" >FREE {{$lara->duration()}}min from {{$lara->duration}}h </button>
                             </div>
                         </td>
