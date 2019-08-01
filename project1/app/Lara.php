@@ -8,6 +8,7 @@ use Carbon\Carbon;
 class Lara extends Model 
 {
         public $table = 'laras';
+        protected $dates=['created_at', 'updated_at','time'];
     protected $fillable = [
       'adress','location','duration','servername','link','room','name','time'
     ];
