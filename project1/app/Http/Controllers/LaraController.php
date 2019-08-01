@@ -6,25 +6,23 @@ use App\Lara;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
-class LaraController extends Controller
-{
+class LaraController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
-        
-        
-        
-       if ($laras = Lara::all()) {
+
+
+
+        if ($laras = Lara::all()) {
 
             return view('Lara', compact('laras'));
         }
         abort(404);
-        
     }
 
     /**
@@ -32,8 +30,7 @@ class LaraController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createpage()
-    {
+    public function createpage() {
         return view("/CreateLara");
     }
 
@@ -43,20 +40,19 @@ class LaraController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-         /**
-    $validatedData = $request->validate([
-            'name' => 'required|unique:lara|max:100|min:3',
-            'link' => 'required|unique:lara|max:50|min:3',
-            'room' => 'max:20',
-        ]);
-     */   
+    public function store(Request $request) {
+        /**
+          $validatedData = $request->validate([
+          'name' => 'required|unique:lara|max:100|min:3',
+          'link' => 'required|unique:lara|max:50|min:3',
+          'room' => 'max:20',
+          ]);
+         */
         $lara = new Lara();
         $lara->name = $request->name;
         $lara->link = $request->link;
         $lara->room = $request->room;
-        
+
         $lara->adress = 0;
         $lara->location = 0;
         $lara->duration = 0;
@@ -64,12 +60,42 @@ class LaraController extends Controller
         $lara->info1 = 0;
         $lara->info2 = 0;
         $lara->info3 = 0;
-       // $lara->time = 0;
-        
+        // $lara->time = 0;
+
         $lara->save();
-  
+
         return redirect()->action('LaraController@createpage')->with('message', 'Success');
-    
+    }
+
+    public function update(Request $request) {
+        //
+        if ($request->ajax()) {
+            /**
+              $validator = \Validator::make($request->all(),[
+              'title' => ['required', 'max:100', Rule::unique('tops')->where('page_id', $request->page_id)],
+              ]);
+
+              if ($validator->fails()) {
+              return response()->json(['errors' =>$validator->errors()->all()]);
+              } else {
+             * */
+            $lara = Lara::find($request->laraID);
+
+            $lara->adress = $request->adress;
+            $lara->location = $request->location;
+            $lara->duration = $request->duration;
+            $lara->servername = $request->name;
+
+            $lara->save();
+
+            return response()->json(['message' => 'update done']);
+        }
+        /**
+          }else{
+
+          return redirect()->action('PageController@indexpage', ['main' => $request->main, 'page' => $request->page])->with('message', 'New post saved');
+          }
+         * */
     }
 
     /**
@@ -78,8 +104,7 @@ class LaraController extends Controller
      * @param  \App\Lara  $lara
      * @return \Illuminate\Http\Response
      */
-    public function show(Lara $lara)
-    {
+    public function show(Lara $lara) {
         //
     }
 
@@ -89,8 +114,7 @@ class LaraController extends Controller
      * @param  \App\Lara  $lara
      * @return \Illuminate\Http\Response
      */
-    public function edit(Lara $lara)
-    {
+    public function edit(Lara $lara) {
         //
     }
 
@@ -101,10 +125,6 @@ class LaraController extends Controller
      * @param  \App\Lara  $lara
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Lara $lara)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -112,8 +132,8 @@ class LaraController extends Controller
      * @param  \App\Lara  $lara
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lara $lara)
-    {
+    public function destroy(Lara $lara) {
         //
     }
+
 }

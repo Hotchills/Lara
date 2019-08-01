@@ -32,7 +32,7 @@
 
                         <td>
                             <div class="input-group mb-3">
-                                <input id="link{{$lara->id}}" type="text" class="form-control" placeholder="DCSXB link" aria-label="DCSXB link" aria-describedby="button-addon1">
+                                <input id="adress{{$lara->id}}" type="text" class="form-control" placeholder="DCSXB adress" aria-label="DCSXB adress" aria-describedby="button-addon1">
                             </div>
                         </td>
                         <td>
@@ -140,7 +140,7 @@
         $(".savebutton").click(function () {
 
             var laraID = $(this).attr("id");
-            var link = $('#link' + laraID).val();
+            var adress = $('#adress' + laraID).val();
             var name = $('#name' + laraID).val();
             var location = $('#location' + laraID).val();
             var duration = $('#duration' + laraID).val();
@@ -152,6 +152,32 @@
             console.log(duration);
 
 
+            $.ajax({
+                method: "POST",
+                url: 'http://10.81.5.232/CreateLara',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {laraID: laraID, adress: adress, name: name, location: location, duration: duration}
+            })
+                    .done(function (data) {
+                        console.log(data.msg);
+                        console.log(data['message']);
+                        if (data.errors) {
+                            jQuery.each(data.errors, function (key, value) {
+                                jQuery('.alert-danger').show();
+                                jQuery('.alert-danger').append('<p>' + value + '</p>');
+                            });
+                        } else {
+                           // window.location = 'http://127.0.0.1:8000/{{$main}}/{{$page}}';
+                        }
+                    })
+                    .fail(function (data) {
+                        console.log(data.msg);
+                        console.log(data);
+                    });
+            // window.location = 'http://127.0.0.1:8000/{{$main}}/{{$page}}';
+            // document.location.reload(true);
         });
     });
 

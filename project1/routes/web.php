@@ -23,3 +23,4 @@ Route::get('/Lara', 'LaraController@index')->name('Lara');
 Route::get('/CreateLara', 'LaraController@createpage')->name('CreateLara');
 
 Route::post('/CreateLara', ['uses'=> 'LaraController@store','as'=>'lara.store' ]);
+Route::post('/UpdateLara', ['uses'=> 'LaraController@update','as'=>'lara.update' ]);
