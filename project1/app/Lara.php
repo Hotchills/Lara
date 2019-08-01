@@ -14,9 +14,9 @@ class Lara extends Model
       public function duration() {
           $temp = Carbon::createFromDate($this->time);
           $now = Carbon::now('Europe/Berlin');
-          $duration = $temp->diffInMinutes($now);
+          $duration = $now->diffInSeconds($temp);
         //   $duration = Carbon::now('Europe/Berlin')->diffInMinutes($temp);
-           
+           $duration=$duration/60;
         return $duration;
     }
 }

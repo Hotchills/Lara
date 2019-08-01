@@ -86,7 +86,7 @@
 
                         @else
                         <td>N/A
-                            {{Carbon\Carbon::now('Europe/Berlin')}}/{{$lara->time}}
+                            {{Carbon\Carbon::now('Europe/Berlin')}} / {{$lara->time}}
                         </td>
                         @endif
 
