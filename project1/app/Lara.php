@@ -8,9 +8,8 @@ use Carbon\Carbon;
 class Lara extends Model 
 {
         public $table = 'laras';
-       protected $time = ['date'];
     protected $fillable = [
-      'adress','location','duration','servername','link','room','name'
+      'adress','location','duration','servername','link','room','name','time'
     ];
       public function duration() {
           $temp = Carbon::createFromDate($this->time);
