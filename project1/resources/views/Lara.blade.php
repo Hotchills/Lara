@@ -99,7 +99,7 @@
                         @else
                         <td> 
                             <div class="input-group-append">
-                                <button class="btn  btn-outline-success" >FREE {{$lara->duration()}}min from {{$lara->duration}}h </button>
+                                <button class="btn  btn-outline-success" >FREE </button>
                             </div>
                         </td>
                         @endif
