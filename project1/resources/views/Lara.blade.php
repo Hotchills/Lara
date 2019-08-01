@@ -28,7 +28,22 @@
                         <th scope="row">{{$key+1}}</th>
                         <td><a href="{{$lara->link}}">{{$lara->name}}</a></td>
                         <td><a href="{{$lara->link}}">{{$lara->link}}</a></td>
-                        <td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}">{{$lara->adress}}</a></td>
+                        
+                        
+                       @if($lara->adress!='0')
+                       <td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}">{{$lara->adress}}</a></td>
+
+                        @else
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="DCSXB link" aria-label="DCSXB link" aria-describedby="button-addon1">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+                                </div>
+                            </div>
+                        </td>
+                        @endif
+                        
                         @if($lara->servername!='0') <td>{{$lara->servername}}</td>
 
                         @else
@@ -55,8 +70,6 @@
                             </div>
                         </td>
                         @endif
-
-                        <td>{{$lara->duration}}</td>  
 
                         @if($lara->duration!='0') <td>{{$lara->duration}}</td>
                         @else
