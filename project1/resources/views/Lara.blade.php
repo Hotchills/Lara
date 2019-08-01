@@ -88,7 +88,7 @@
                         </td>
                         @endif
 
-                        @if(1) <td>{{$lara->time }}{{ Carbon\Carbon::now() }}</td>
+                        @if( $lara->duration() > $lara->duration) <td>{{$lara->duration}}h</td>
                         @else
                         <td>Free
                         </td>
