@@ -10,8 +10,9 @@ class Lara extends Model
     //
       public function duration() {
           $temp = $this->time;
-        //  $duration = $temp->timediffInSeconds(Carbon::now());
-           $duration = Carbon::now('Europe/Berlin')->diffInMinutes($temp);
+          $duration = $temp->diffInMinutes('Europe/Berlin');
+        //   $duration = Carbon::now('Europe/Berlin')->diffInMinutes($temp);
+           
           
 
         return $duration;
