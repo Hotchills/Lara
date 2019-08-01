@@ -88,7 +88,7 @@
                         </td>
                         @endif
 
-                        @if( $lara->time->diffInSeconds(Carbon\Carbon::now()) > ( $lara->duration*360 )) <td>{{$lara->duration}}h</td>
+                        @if( 1) <td>{{Carbon\Carbon::now()}}h</td>
                         @else
                         <td>Free
                         </td>
