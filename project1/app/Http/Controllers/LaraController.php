@@ -86,8 +86,8 @@ class LaraController extends Controller {
             $lara->location = $request->location;
             $lara->duration = $request->duration;
             $lara->servername = $request->name;
-            if($request->adress != 0){
-            $lara->time = Carbon::now('Europe/Berlin');
+            if($request->adress != '0'){
+            $lara->time = Carbon::now();
             }else{
                 $lara->time =$lara->created_at;
             }
