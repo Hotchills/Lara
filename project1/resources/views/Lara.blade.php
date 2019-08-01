@@ -161,23 +161,15 @@
                 data: {laraID: laraID, adress: adress, name: name, location: location, duration: duration}
             })
                     .done(function (data) {
-                        console.log(data.msg);
                         console.log(data['message']);
                         if (data.errors) {
-                            jQuery.each(data.errors, function (key, value) {
-                                jQuery('.alert-danger').show();
-                                jQuery('.alert-danger').append('<p>' + value + '</p>');
                             });
-                        } else {
-                           // window.location = 'http://127.0.0.1:8000/{{$main}}/{{$page}}';
                         }
                     })
                     .fail(function (data) {
                         console.log(data.msg);
                         console.log(data);
                     });
-            // window.location = 'http://127.0.0.1:8000/{{$main}}/{{$page}}';
-            // document.location.reload(true);
         });
     });
 
