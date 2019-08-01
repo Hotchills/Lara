@@ -146,7 +146,7 @@
             var duration = $('#duration' + laraID).val();
 
             console.log(laraID);
-            console.log(link);
+            console.log(adress);
             console.log(name);
             console.log(location);
             console.log(duration);
