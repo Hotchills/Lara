@@ -88,9 +88,17 @@
                         </td>
                         @endif
 
-                        @if( $lara->duration() > $lara->duration) <td>{{$lara->duration()}}h</td>
+                        @if( $lara->duration() < $lara->duration) <td>
+                        
+                                                     <div class="input-group-append">
+                                <button class="btn  btn-outline-danger" >{{$lara->duration}}</button>
+                            </div>
+                        </td>
                         @else
-                        <td>Free {{$lara->duration()}}
+                        <td> 
+                             <div class="input-group-append">
+                                <button class="btn  btn-outline-success" >FREE</button>
+                            </div>
                         </td>
                         @endif
                         <td >
