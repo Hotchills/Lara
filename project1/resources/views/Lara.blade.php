@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container"Style="width: 90%;">
     <div class="content">
         <div class="title m-b-md">
             LARA
@@ -46,7 +46,7 @@
                                 <input type="text" class="form-control" placeholder="Server location" aria-label="Server location" aria-describedby="button-addon1">
                             </div>
                         </td>
-                        </td>
+                        <td>
                 <div class="input-group mb-3">
 
                     <select class="custom-select" id="inputGroupSelect04" aria-label="Selector">
