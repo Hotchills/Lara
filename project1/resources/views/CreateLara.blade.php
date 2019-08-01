@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="jumbotron jumbotron-fluid">
         <div class="container">
 
 
             <div class="content">
                 <div class="title m-b-md">
-                   Create new LARA :
+                <h1 class="display-4"> Create new LARA :</h1>  
                 </div>
+<br>
 
                 <div class="links">
                     <div class="form-inline">
@@ -34,5 +36,5 @@
             </div>
 
         </div>
-
+</div>
 @endsection
