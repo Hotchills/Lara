@@ -29,7 +29,7 @@
                         <td><a href="{{$lara->link}}">{{$lara->name}}</a></td>
                         <td><a href="{{$lara->link}}">{{$lara->link}}</a></td>
 
-                        @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && lara->duration == '0')     
+                        @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
 
                         <td>
                             <div class="input-group mb-3">
