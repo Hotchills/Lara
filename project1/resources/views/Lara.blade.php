@@ -154,19 +154,19 @@
 
             $.ajax({
                 method: "POST",
-                url: 'http://10.81.5.232/CreateLara',
+                url: 'http://10.81.5.232/UpdateLara',
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 data: {laraID: laraID, adress: adress, name: name, location: location, duration: duration}
             })
                     .done(function (data) {
-                        console.log(data.msg);
+                        console.log(data.message);
                         console.log(data['message']);
 
                     })
                     .fail(function (data) {
-                        console.log(data.msg);
+                        console.log(data.message);
                         console.log(data);
                     });
         });
