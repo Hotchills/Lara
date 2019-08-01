@@ -72,26 +72,13 @@
                         <td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}" target="_blank">{{$lara->adress}}</a></td>
 
                         @else
-                        <td>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="DCSXB link" aria-label="DCSXB link" aria-describedby="buttonadress{{$lara->id}}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="buttonadress{{$lara->id}}">Button</button>
-                                </div>
-                            </div>
-                        </td>
+                        <td> N/A </td>
                         @endif
 
                         @if($lara->servername!='0') <td>{{$lara->servername}}</td>
 
                         @else
-                        <td>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Server name" aria-label="Server name" aria-describedby="buttonname{{$lara->id}}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="buttonname{{$lara->id}}">Button</button>
-                                </div>
-                            </div>
+                        <td> N/A
                         </td>
                         @endif
 
@@ -99,34 +86,13 @@
                         @if($lara->location != '0') <td>{{$lara->location}}</td>
 
                         @else
-                        <td>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Server location" aria-label="Server location" aria-describedby="buttonlocation{{$lara->id}}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="buttonlocation{{$lara->id}}">Button</button>
-                                </div>
-                            </div>
+                        <td>N/A
                         </td>
                         @endif
 
                         @if($lara->duration!='0') <td>{{$lara->duration}}</td>
                         @else
-                        <td>
-                            <div class="input-group mb-3">
-
-                                <select class="custom-select" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">
-                                    <option selected>Choose...</option>
-                                    <option value="30 min">30 min</option>
-                                    <option value="1h">1h</option>
-                                    <option value="2h">2h</option>
-                                    <option value="6h">6h</option>
-                                    <option value="24h">24h</option>
-                                </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button">Button</button>
-                                </div>
-
-                            </div>
+                        <td>Free
                         </td>
                         @endif
                         <td >
