@@ -46,7 +46,7 @@
                                 <input type="text" class="form-control" placeholder="Server location" aria-label="Server location" aria-describedby="button-addon1">
                             </div>
                         </td>
-                        <1td>
+                        <td>
                 <div class="input-group mb-3">
 
                     <select class="custom-select" id="inputGroupSelect04" aria-label="Selector">
