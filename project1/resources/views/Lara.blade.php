@@ -9,7 +9,6 @@
         </div>
 
         <div class="links">
-
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -58,7 +57,7 @@
                                     <option value="5">24h</option>
                                 </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary savebutton" type="button" id="{{$lara->id}}">Button</button>
+                                    <button class="btn btn-outline-secondary savebutton" type="button" id="{{$lara->id}}">Button</butt                                    on>
                                 </div>
 
                             </div>
@@ -138,48 +137,22 @@
 <script>
     $(document).ready(function () {
 
-    $(".savebutton").click(function () {
-        
-    var laraID = $(this).attr("id");
-    var link = $('#link'+laraID).val();
-    var name = $('#name'+laraID).val();
-    var location = $('#location'+laraID).val();
-    var duration = $('#duration'+laraID).val();
-    
-    console.log(laraID);
-    console.log(link);
-    console.log(name);
-    console.log(location);
-    console.log(duration);
-    
-    
-            $.ajax({
-            method: "POST",
-                    url: 'http://127.0.0.1:8000/CreateLara',
-                    headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    data: { laraID:laraID, link:link, name: name, location:location, duration:duration }
-            })
-            .done(function (data) {
-            console.log(data.msg);
-            console.log(data['message']);
-                    if (data.errors){
-            jQuery.each(data.errors, function(key, value){
-            jQuery('.alert-danger').show();
-            jQuery('.alert-danger').append('<p>' + value + '</p>');
-            });
-            } else{
-            window.location = 'http://127.0.0.1:8000/{{$main}}/{{$page}}';
-            }
-            })
-            .fail(function (data) {
-            console.log(data.msg);
-                    console.log(data);
-            });
-            // window.location = 'http://127.0.0.1:8000/{{$main}}/{{$page}}';
-            // document.location.reload(true);
-    });
+        $(".savebutton").click(function () {
+
+            var laraID = $(this).attr("id");
+            var link = $('#link' + laraID).val();
+            var name = $('#name' + laraID).val();
+            var location = $('#location' + laraID).val();
+            var duration = $('#duration' + laraID).val();
+
+            console.log(laraID);
+            console.log(link);
+            console.log(name);
+            console.log(location);
+            console.log(duration);
+
+
+        });
     });
 
 </script>
