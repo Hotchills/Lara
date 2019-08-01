@@ -51,6 +51,7 @@
 
                                 <select id="duration{{$lara->id}}" class="custom-select" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">
                                     <option selected>Choose...</option>
+                                    <option value="0.1">10min</option>
                                     <option value="1">1h</option>
                                     <option value="2">2h</option>
                                     <option value="6">6h</option>
