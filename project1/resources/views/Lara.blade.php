@@ -161,10 +161,9 @@
                 data: {laraID: laraID, adress: adress, name: name, location: location, duration: duration}
             })
                     .done(function (data) {
+                        console.log(data.msg);
                         console.log(data['message']);
-                        if (data.errors) {
-                            });
-                        }
+
                     })
                     .fail(function (data) {
                         console.log(data.msg);
