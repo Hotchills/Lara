@@ -126,6 +126,12 @@
                         </td>
                         @endif
                         @endif
+                        
+                        <td >
+                        <div class="input-group-append">
+                                    <button class="btn btn-danger btn-outline-secondary clearbutton" id="clear{{$lara->id}}" type="button">Clear</button>
+                                </div>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -136,33 +142,67 @@
 </div>
 <script>
     $(document).ready(function () {
-
-        $(".savebutton").click(function () {
-
+        
+        $(".clearbutton").click(function () {
             var laraID = $(this).attr("id");
-            var adress = $('#adress' + laraID).val();
-            if (!adress){
-                adress=0;
-            }
-            var name = $('#name' + laraID).val();
-            if (!name){
-                name=0;
-            }
-            var location = $('#location' + laraID).val();
-            if (!location){
-                location=0;
-            }
-            var duration = $('#duration' + laraID).val();
-            if (!duration){
-                duration=0;
-            }
-
+            laraID= laraID.slice(5);
+            var adress = 0;
+            var name = 0;
+            var location = 0;
+            var duration = 0;
+            
             console.log(laraID);
             console.log(adress);
             console.log(name);
             console.log(location);
             console.log(duration);
 
+            $.ajax({
+                method: "POST",
+                url: 'http://10.81.5.232/UpdateLara',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {laraID: laraID, adress: adress, name: name, location: location, duration: duration}
+            })
+                    .done(function (data) {
+                        console.log(data.message);
+                        console.log(data['message']);
+
+                    })
+                    .fail(function (data) {
+                        console.log(data.message);
+                        console.log(data);
+                    });
+        });
+        
+        
+        
+        
+
+        $(".savebutton").click(function () {
+            var laraID = $(this).attr("id");
+            var adress = $('#adress' + laraID).val();
+            if (!adress) {
+                adress = 0;
+            }
+            var name = $('#name' + laraID).val();
+            if (!name) {
+                name = 0;
+            }
+            var location = $('#location' + laraID).val();
+            if (!location) {
+                location = 0;
+            }
+            var duration = $('#duration' + laraID).val();
+            if (duration == 'Choose...') {
+                duration = 0;
+            }
+            console.log(laraID);
+            console.log(adress);
+            console.log(name);
+            console.log(location);
+            console.log(duration);
 
             $.ajax({
                 method: "POST",
