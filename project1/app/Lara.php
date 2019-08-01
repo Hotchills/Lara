@@ -13,11 +13,11 @@ class Lara extends Model
       'adress','location','duration','servername','link','room','name','time'
     ];
       public function duration() {
-          $temp = Carbon::parse($this->time,'Europe/Berlin');
-          $now = Carbon::now('Europe/Berlin');
-          $duration = $now->diffInSeconds($temp);
+          $temp = Carbon::parse($this->time);
+          $now = Carbon::now();
+          $duration = $now->diffInMinutes($temp);
         //   $duration = Carbon::now('Europe/Berlin')->diffInMinutes($temp);
-           $duration=$duration/60;
+           $duration=$duration;
         return $duration;
     }
 }
