@@ -91,7 +91,7 @@ class LaraController extends Controller {
                 $lara->time =$lara->created_at;
            
             }else{
-                 $lara->time = Carbon::now('Europe/Berlin');
+                 $lara->time = Carbon::now('Europe/Berlin')->toDateTimeString();
             }
             $lara->save();
 
