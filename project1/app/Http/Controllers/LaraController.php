@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Lara;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Carbon\Carbon;
 
 class LaraController extends Controller {
 
@@ -85,7 +86,7 @@ class LaraController extends Controller {
             $lara->location = $request->location;
             $lara->duration = $request->duration;
             $lara->servername = $request->name;
-
+            $lara->time = Carbon::now();
             $lara->save();
 
             return response()->json(['message' => 'update done']);

@@ -51,20 +51,18 @@
 
                                 <select id="duration{{$lara->id}}" class="custom-select" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">
                                     <option selected>Choose...</option>
-                                    <option value="30 min">30 min</option>
-                                    <option value="1h">1h</option>
-                                    <option value="2h">2h</option>
-                                    <option value="6h">6h</option>
-                                    <option value="24h">24h</option>
+                                    <option value="1">1h</option>
+                                    <option value="2">2h</option>
+                                    <option value="6">6h</option>
+                                    <option value="24">24h</option>
                                 </select>
-
 
                             </div>
 
                         </td>
                         <td>
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary savebutton" type="button" id="{{$lara->id}}">Save</butt                                    on>
+                                <button class="btn btn-outline-primary savebutton" type="button" id="{{$lara->id}}">Save</button>
                             </div>
                         </td>
                         @else
@@ -90,14 +88,14 @@
                         </td>
                         @endif
 
-                        @if($lara->duration!='0') <td>{{$lara->duration}}</td>
+                        @if( $lara->time->diffInSeconds(\Carbon\Carbon::now()) > ( $lara->duration*360 )) <td>{{$lara->duration}}h</td>
                         @else
                         <td>Free
                         </td>
                         @endif
                         <td >
                             <div class="input-group-append">
-                                <button class="btn btn-danger btn-outline-secondary clearbutton" id="clear{{$lara->id}}" type="button">Clear</button>
+                                <button class="btn  btn-outline-danger clearbutton" id="clear{{$lara->id}}" type="button">Clear</button>
                             </div>
                         </td>
                         @endif
