@@ -50,11 +50,11 @@
 
                                 <select id="duration{{$lara->id}}" class="custom-select" id="inputGroupSelect04" aria-label="Selector">
                                     <option selected>Choose...</option>
-                                    <option value="1">30 min</option>
-                                    <option value="2">1h</option>
-                                    <option value="3">2h</option>
-                                    <option value="4">6h</option>
-                                    <option value="5">24h</option>
+                                    <option value="30 min">30 min</option>
+                                    <option value="1h">1h</option>
+                                    <option value="2h">2h</option>
+                                    <option value="6h">6h</option>
+                                    <option value="24h">24h</option>
                                 </select>
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-secondary savebutton" type="button" id="{{$lara->id}}">Button</butt                                    on>
@@ -112,11 +112,11 @@
 
                                 <select class="custom-select" id="inputGroupSelect04" aria-label="Selector">
                                     <option selected>Choose...</option>
-                                    <option value="1">30 min</option>
-                                    <option value="2">1h</option>
-                                    <option value="3">2h</option>
-                                    <option value="4">6h</option>
-                                    <option value="5">24h</option>
+                                    <option value="30 min">30 min</option>
+                                    <option value="1h">1h</option>
+                                    <option value="2h">2h</option>
+                                    <option value="6h">6h</option>
+                                    <option value="24h">24h</option>
                                 </select>
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-secondary" type="button">Button</button>
@@ -141,9 +141,21 @@
 
             var laraID = $(this).attr("id");
             var adress = $('#adress' + laraID).val();
+            if (!adress){
+                adress=0;
+            }
             var name = $('#name' + laraID).val();
+            if (!name){
+                name=0;
+            }
             var location = $('#location' + laraID).val();
+            if (!location){
+                location=0;
+            }
             var duration = $('#duration' + laraID).val();
+            if (!duration){
+                duration=0;
+            }
 
             console.log(laraID);
             console.log(adress);
