@@ -13,12 +13,12 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">name</th>
+                        <th scope="col">Name</th>
                         <th scope="col">link</th>
-                        <th scope="col">adress</th>
-                        <th scope="col">servername</th>
-                        <th scope="col">location</th>
-                        <th scope="col">duration</th>
+                        <th scope="col">Ticket</th>
+                        <th scope="col">Servername</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Duration</th>
                         <th scope="col">#</th>
                     </tr>
                 </thead>
