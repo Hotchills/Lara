@@ -161,11 +161,14 @@ window.location.reload();
 
 
         $(".savebutton").click(function () {
-            var operation = 'save';
+         
             var laraID = $(this).attr("id");
             var adress = $('#adress' + laraID).val();
             if (!adress) {
-                adress = 0;
+                
+               	jQuery('.alert-danger').show();
+                jQuery('.alert-danger').append('<p> Please don`t forget the ticket number' </p>');
+                  		
             }
             var name = $('#name' + laraID).val();
             if (!name) {
@@ -191,16 +194,10 @@ window.location.reload();
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                data: {operation: operation, laraID: laraID, adress: adress, name: name, location: location, duration: duration}
+                data: {laraID: laraID, adress: adress, name: name, location: location, duration: duration}
             })
                     .done(function (data) {
-                        
-                        jQuery.each(data.errors, function(key, value){
-                  			jQuery('.alert-danger').show();
-                  			jQuery('.alert-danger').append('<p>'+value+'</p>');
-                  		});
-                        
-                        
+                                            
                         console.log(data.message);
                         console.log(data['message']);
 //window.location.reload();

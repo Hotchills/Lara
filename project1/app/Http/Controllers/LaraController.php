@@ -71,15 +71,6 @@ class LaraController extends Controller {
     public function update(Request $request) {
         //
         if ($request->ajax()) {
-            if ($request->operation =='save') {
-                $request->adress=NULL;
-                $validator = \Validator::make($request->all(), [
-                            'adress' => ['required', 'max:50'],
-                ]);
-            }
-            if ($validator->fails()) {
-                return response()->json(['errors' => $validator->errors()->all()]);
-            } else {
 
                 $lara = Lara::find($request->laraID);
 
@@ -96,7 +87,7 @@ class LaraController extends Controller {
                 $lara->save();
 
                 return response()->json(['message' => 'update done']);
-            }
+            
         }
         return redirect()->back()->with('message', 'New post saved');
         /**
