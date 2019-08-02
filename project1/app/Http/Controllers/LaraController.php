@@ -42,13 +42,13 @@ class LaraController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        
-          $validatedData = $request->validate([
-          'name' => 'required|unique:laras|max:50|min:3',
-          'link' => 'required|unique:laras|max:50|min:3',
-          'room' => 'max:20',
-          ]);
-        
+
+        $validatedData = $request->validate([
+            'name' => 'required|unique:laras|max:50|min:3',
+            'link' => 'required|unique:laras|max:50|min:3',
+            'room' => 'max:20',
+        ]);
+
         $lara = new Lara();
         $lara->name = $request->name;
         $lara->link = $request->link;
@@ -71,34 +71,33 @@ class LaraController extends Controller {
     public function update(Request $request) {
         //
         if ($request->ajax()) {
-            
-              $validator = \Validator::make($request->all(),[
-              'adress' => ['required', 'max:50'],
-              ]);
-
-              if ($validator->fails()) {
-              return response()->json(['errors' =>$validator->errors()->all()]);
-              } else {
-             
-            $lara = Lara::find($request->laraID);
-
-            $lara->adress = $request->adress;
-            $lara->location = $request->location;
-            $lara->duration = $request->duration;
-            $lara->servername = $request->name;
-            
-            if($request->duration == '0'){
-                $lara->time =$lara->created_at;
-           
-            }else{
-                 $lara->time = Carbon::now()->toDateTimeString(); 
+            if ($request->operation =='save') {
+                $validator = \Validator::make($request->all(), [
+                            'adress' => ['required', 'max:50'],
+                ]);
             }
-            $lara->save();
+            if ($validator->fails()) {
+                return response()->json(['errors' => $validator->errors()->all()]);
+            } else {
 
-            return response()->json(['message' => 'update done']);
+                $lara = Lara::find($request->laraID);
+
+                $lara->adress = $request->adress;
+                $lara->location = $request->location;
+                $lara->duration = $request->duration;
+                $lara->servername = $request->name;
+
+                if ($request->duration == '0') {
+                    $lara->time = $lara->created_at;
+                } else {
+                    $lara->time = Carbon::now()->toDateTimeString();
+                }
+                $lara->save();
+
+                return response()->json(['message' => 'update done']);
+            }
         }
-        }
-          return redirect()->back()->with('message', 'New post saved');
+        return redirect()->back()->with('message', 'New post saved');
         /**
           }else{
 

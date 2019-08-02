@@ -161,9 +161,12 @@ window.location.reload();
 
 
         $(".savebutton").click(function () {
+            var operation = 'save';
             var laraID = $(this).attr("id");
             var adress = $('#adress' + laraID).val();
-
+            if (!adress) {
+                name = 0;
+            }
             var name = $('#name' + laraID).val();
             if (!name) {
                 name = 0;
@@ -188,7 +191,7 @@ window.location.reload();
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                data: {laraID: laraID, adress: adress, name: name, location: location, duration: duration}
+                data: {operation: operation, laraID: laraID, adress: adress, name: name, location: location, duration: duration}
             })
                     .done(function (data) {
                         
