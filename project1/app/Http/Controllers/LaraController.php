@@ -32,7 +32,13 @@ class LaraController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function createpage() {
-        return view("/CreateLara");
+
+        
+                if ($laras = Lara::all()) {
+
+            return view('/CreateLara', compact('laras'));
+        }
+        abort(404);
     }
 
     /**
