@@ -23,14 +23,11 @@
 }
 .table td, .table th{
 vertical-align: middle;
-padding:0.45rem;
+padding:0.40rem;
 margin:0px;
+text-align: center;
+}
 
-}
-.Textbtn:hover {
-color: #fff !important;
-text-decoration: none;
-}
 .btn{
     
     padding: .25rem .5rem;
