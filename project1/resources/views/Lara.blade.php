@@ -77,9 +77,9 @@
                                     @php ($minutes = ($lara->duration * 60) - $lara->duration())
                                    
                                 @if($minutes < 60 )
-                                 {{$minutes}}min left
+                                 {{$minutes}} min
                                 @else
-                                {{ $minutes = floor($minutes / 60).':'.($minutes -   floor($minutes / 60) * 60)}}left
+                                {{ $minutes = floor($minutes / 60).'h '.($minutes -   floor($minutes / 60) * 60)}}min
                                 @endif
                                 </button>
                             </div></td>   
