@@ -15,7 +15,7 @@
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Room</th>
                         <th scope="col">Name</th>
                         <th scope="col">link</th>
                         <th scope="col">Duration</th>
@@ -28,19 +28,16 @@
                 <tbody>
                     @php ($room = '0')
                     @foreach($laras as $key=>$lara)
-                    @if($room != $lara->room )
-                    @php ($room=$lara->room)
-                    <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Room : {{$lara->room}}</th>             
-                    </tr>
-                     </thead>
-                    @endif
+
 
                     <tr>
-                        <th scope="row">{{$key+1}}</th>
-                        <td scope="row" class="font-weight-bold"> {{$lara->name}}</td>
+                        @if($room != $lara->room )
+                        @php ($room=$lara->room)
+                        <th scope="row" class="table-success">{{$lara->room}}</th> 
+                        @else
+                        <th scope="row" class="table-success"></th> 
+                        @endif
+                        <td class="font-weight-bold"> {{$lara->name}}</td>
                         <td><a href="{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
 
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
@@ -106,7 +103,7 @@
                         @endif  
                     </tr>
                     @endforeach
-                    
+
                 </tbody>
             </table>
 
