@@ -29,7 +29,7 @@
                     @foreach($laras as $key=>$lara)
                     <tr>
                         <th scope="row">{{$key+1}}</th>
-                        <td><a href="{{$lara->link}}" target="_blank">{{$lara->name}}</a></td>
+                        <td>{{$lara->name}}</td>
                         <td><a href="{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
 
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
@@ -52,7 +52,7 @@
                         <td>
                             <div class="input-group mb-3">
 
-                                <select id="duration{{$lara->id}}" class="custom-select" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">
+                                <select id="duration{{$lara->id}}" class="custom-select btn-sm" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">
                                     <option selected>Choose...</option>
                                     <option value="0.1">10min</option>
                                     <option value="1">1h</option>
@@ -66,7 +66,7 @@
                         </td>
                         <td>
                             <div class="input-group-append">
-                                <button class="btn btn-outline-primary savebutton" type="button" id="{{$lara->id}}">Save</button>
+                                <button class="btn btn-outline-primary savebutton btn-sm" type="button" id="{{$lara->id}}">Save</button>
                             </div>
                         </td>
                         @else
@@ -96,19 +96,19 @@
                         @if( $lara->duration() < ($lara->duration * 60)) <td>
 
                             <div class="input-group-append">
-                                <p class="btn  btn-outline-danger" >{{$lara->duration()}}min from {{$lara->duration}}h</p>
+                                <p class="btn  btn-outline-danger btn-sm" >{{$lara->duration()}}min from {{$lara->duration}}h</p>
                             </div>
                         </td>
                         @else
                         <td> 
                             <div class="input-group-append">
-                                <button class="btn  btn-outline-success" >FREE </button>
+                                <button class="btn  btn-outline-success btn-sm" >FREE </button>
                             </div>
                         </td>
                         @endif
                         <td >
                             <div class="input-group-append">
-                                <button class="btn  btn-outline-danger clearbutton" id="clear{{$lara->id}}" type="button">Clear</button>
+                                <button class="btn  btn-outline-danger clearbutton btn-sm" id="clear{{$lara->id}}" type="button">Free</button>
                             </div>
                         </td>
                         @endif
@@ -178,13 +178,14 @@ window.location.reload();
             }
             var location = $('#location' + laraID).val();
             if (!location) {
-                location = 0;
+               
+                jQuery('.alert-danger').show();
+                jQuery('.alert-danger').append('<p> Please add location</p>');
+                return;	
             }
             var duration = $('#duration' + laraID).val();
             if (duration == 'Choose...') {
-                jQuery('.alert-danger').show();
-                jQuery('.alert-danger').append('<p> Please select the duration </p>');
-                return;	
+                duration=2;
             }
             console.log(laraID);
             console.log(adress);
