@@ -28,14 +28,14 @@
                 <tbody>
                     @php ($room = '0')
                     @php ($color = array("light","secondary","success","danger","warning","info","primary","light"])
-                      @php ($temp = 0)
+                    @php ($temp = 0)
                     @foreach($laras as $key=>$lara)
 
 
                     <tr>
                         @if($room != $lara->room )
                         @php ($room=$lara->room)
-                        @php ($temp=$temp++)
+                        @php ($temp=$temp+1)
                         <th scope="row" class="table-{{$color[$temp]}} b-1" >{{$lara->room}}</th> 
                       
                         @else
