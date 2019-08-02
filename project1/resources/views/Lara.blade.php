@@ -165,7 +165,7 @@ window.location.reload();
             var laraID = $(this).attr("id");
             var adress = $('#adress' + laraID).val();
             if (!adress) {
-                name = 0;
+                adress = 0;
             }
             var name = $('#name' + laraID).val();
             if (!name) {
