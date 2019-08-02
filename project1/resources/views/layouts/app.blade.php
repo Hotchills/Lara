@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
         <!-- Styles -->
+           <style>
 .table{
 vertical-align: middle;
 padding:0px;
@@ -28,6 +29,7 @@ padding:0px;
 margin:0px;
 
 }
+   </style>
     </head>
     <body>
         <!-- Optional JavaScript -->
