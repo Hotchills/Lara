@@ -27,7 +27,7 @@
                 </thead>
                 <tbody>
                     @php ($room = '0')
-                    @foreach($laras->slice(2) as $key=>$lara)
+                    @foreach($laras as $key=>$lara)
                     @if($room != $lara->room )
                     @php ($room=$lara->room)
                     <thead class="thead-dark">
@@ -106,6 +106,7 @@
                         @endif  
                     </tr>
                     @endforeach
+                    
                 </tbody>
             </table>
 

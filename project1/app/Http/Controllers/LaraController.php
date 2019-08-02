@@ -19,7 +19,7 @@ class LaraController extends Controller {
 
 
 
-        if ($laras = Lara::orderBy('name', 'asc')->get()) {
+        if ($laras = Lara::orderBy('name', 'desc')->get()) {
             return view('Lara', compact('laras'));
         }
         abort(404);
