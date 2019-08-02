@@ -46,7 +46,7 @@
                             @php ($room=$lara->room)
                             {{$lara->room}}
                             @else
-
+{{$lara->room}}
                             @endif
                         </th> 
                         <td class="font-weight-bold"> {{$lara->name}}</td>
