@@ -23,7 +23,7 @@
 }
 .table td, .table th{
 vertical-align: middle;
-padding:0.40rem;
+padding:0.35rem;
 margin:0px;
 text-align: center;
 }
@@ -36,7 +36,7 @@ text-align: center;
     border-radius: .2rem;
 }
 .input-group{
-    
+    left:10%;
     width:80%;
 }
 

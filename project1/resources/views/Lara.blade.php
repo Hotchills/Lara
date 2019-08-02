@@ -48,17 +48,17 @@
 
 
                         <td>
-                            <div class="input-group input-group-sm">
+                            <div class="input-group ">
                                 <input id="adress{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="DCSXB adress" aria-label="DCSXB adress" >
                             </div>
                         </td>
                         <td>
-                            <div class="input-group input-group-sm">
+                            <div class="input-group ">
                                 <input id="name{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="Server name" aria-label="Server name" >
                             </div>
                         </td>
                         <td>
-                            <div class="input-group input-group-sm">
+                            <div class="input-group ">
                                 <input  id="location{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="Server location" aria-label="Server location" >
                             </div>
                         </td>
