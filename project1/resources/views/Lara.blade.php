@@ -32,9 +32,8 @@
 
 
                     <tr>
-                    @if($lara->room == '1.1')    <td scope="row" class="table-info b-1" >  @endif
-                     @if($lara->room == '0.3') 
-                         <td scope="row" class="table-light b-1" > @endif
+                    @if($lara->room == '1.1') <td scope="row" class="table-danger b-1" >  @endif
+                    @if($lara->room == '0.3') <td scope="row" class="table-light b-1" > @endif
                        
                     @if($lara->room == '1.2')     <td scope="row" class="table-primary b-1" >@endif
                     @if($lara->room == '1.3')     <td scope="row" class="table-success b-1" >@endif
@@ -46,7 +45,7 @@
                             @php ($room=$lara->room)
                             {{$lara->room}}
                             @else
-{{$lara->room}}
+
                             @endif
                         </td> 
                         <td class="font-weight-bold"> {{$lara->name}}</td>
