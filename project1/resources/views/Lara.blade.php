@@ -7,10 +7,6 @@
         <div class="alert alert-danger" Style="display: none;">
 
         </div>
-        <div class="title m-b-md">
-            LARA
-        </div>
-
         <div class="links">
             <table class="table table-striped">
                 <thead class="thead-dark">

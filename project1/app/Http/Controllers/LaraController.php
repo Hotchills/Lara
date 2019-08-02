@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace DCSXB\Http\Controllers;
 
-use App\Lara;
+use DCSXB\Lara;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Carbon\Carbon;
@@ -106,7 +106,7 @@ class LaraController extends Controller {
     /**
      * Display the specified resource.
      *
-     * @param  \App\Lara  $lara
+     * @param  \DCSXB\Lara  $lara
      * @return \Illuminate\Http\Response
      */
     public function show(Lara $lara) {
@@ -116,7 +116,7 @@ class LaraController extends Controller {
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Lara  $lara
+     * @param  \DCSXB\Lara  $lara
      * @return \Illuminate\Http\Response
      */
     public function edit(Lara $lara) {
@@ -127,14 +127,14 @@ class LaraController extends Controller {
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Lara  $lara
+     * @param  \DCSXB\Lara  $lara
      * @return \Illuminate\Http\Response
      */
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Lara  $lara
+     * @param  \DCSXB\Lara  $lara
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request) {

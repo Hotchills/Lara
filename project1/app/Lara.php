@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace DCSXB;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
