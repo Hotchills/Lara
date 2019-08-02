@@ -42,13 +42,13 @@ class LaraController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        /**
+        
           $validatedData = $request->validate([
-          'name' => 'required|unique:lara|max:100|min:3',
+          'name' => 'required|unique:lara|max:50|min:3',
           'link' => 'required|unique:lara|max:50|min:3',
           'room' => 'max:20',
           ]);
-         */
+        
         $lara = new Lara();
         $lara->name = $request->name;
         $lara->link = $request->link;
@@ -71,15 +71,15 @@ class LaraController extends Controller {
     public function update(Request $request) {
         //
         if ($request->ajax()) {
-            /**
+            
               $validator = \Validator::make($request->all(),[
-              'title' => ['required', 'max:100', Rule::unique('tops')->where('page_id', $request->page_id)],
+              'adress' => ['required', 'max:50'],
               ]);
 
               if ($validator->fails()) {
               return response()->json(['errors' =>$validator->errors()->all()]);
               } else {
-             * */
+             
             $lara = Lara::find($request->laraID);
 
             $lara->adress = $request->adress;
