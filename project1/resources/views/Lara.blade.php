@@ -32,23 +32,23 @@
 
 
                     <tr>
-                    @if($lara->room == '1.1')    <th scope="row" class="table-info b-1" > 
+                    @if($lara->room == '1.1')    <td scope="row" class="table-info b-1" > 
                         @else
-                         <th scope="row" class="table-light b-1" >
+                         <td scope="row" class="table-light b-1" >
                         @endif
-                    @if($lara->room == '1.2')     <th scope="row" class="table-primary b-1" >@endif
-                    @if($lara->room == '1.3')     <th scope="row" class="table-success b-1" >@endif
-                    @if($lara->room == '2.1/2/2')     <th scope="row" class="table-warning b-1" >@endif
-                    @if($lara->room == '2.3/2/4')     <th scope="row" class="table-danger b-1" >@endif
-                    @if($lara->room  == '3.1')     <th scope="row" class="table-info b-1" >@endif
-                    @if($lara->room== '0.3')     <th scope="row" class="table-dark b-1" >@endif
+                    @if($lara->room == '1.2')     <td scope="row" class="table-primary b-1" >@endif
+                    @if($lara->room == '1.3')     <td scope="row" class="table-success b-1" >@endif
+                    @if($lara->room == '2.1/2/2')     <td scope="row" class="table-warning b-1" >@endif
+                    @if($lara->room == '2.3/2/4')     <td scope="row" class="table-danger b-1" >@endif
+                    @if($lara->room  == '3.2')     <td scope="row" class="table-info b-1" >@endif
+                    @if($lara->room== '0.3')     <td scope="row" class="table-dark b-1" >@endif
                             @if($room != $lara->room )
                             @php ($room=$lara->room)
                             {{$lara->room}}
                             @else
 {{$lara->room}}
                             @endif
-                        </th> 
+                        </td> 
                         <td class="font-weight-bold"> {{$lara->name}}</td>
                         <td><a href="{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
 
