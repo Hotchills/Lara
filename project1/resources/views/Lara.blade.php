@@ -74,12 +74,12 @@
                         <td>
                             <div class="input-group-append">
                                 <button class="btn  btn-outline-danger btn-sm" >
-                                    {{$lara->duration = (($lara->duration * 60) - $lara->duration())}}
+                                    @php ($minutes = ($lara->duration * 60) - $lara->duration())
                                    
-                                @if($lara->duration < 60 )
-                                 {{$lara->duration}}min left
+                                @if($minutes < 60 )
+                                 {{$minutes}}min left
                                 @else
-                                {{ $lara->duration = floor($lara->duration / 60).':'.($minutes -   floor($lara->duration / 60) * 60)}}
+                                {{ $minutes = floor($minutes / 60).':'.($minutes -   floor($minutes / 60) * 60)}}left
                                 @endif
                                 </button>
                             </div></td>   
