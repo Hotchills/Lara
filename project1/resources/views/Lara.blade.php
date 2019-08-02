@@ -73,7 +73,15 @@
                         @if( $lara->duration() < ($lara->duration * 60)) 
                         <td>
                             <div class="input-group-append">
-                                <button class="btn  btn-outline-danger btn-sm" >{{$lara->duration()}}min from {{$lara->duration}}h</button>
+                                <button class="btn  btn-outline-danger btn-sm" >
+                                    {{$lara->duration = (($lara->duration * 60) - $lara->duration())}}
+                                   
+                                @if($lara->duration < 60 )
+                                 {{$lara->duration}}min left
+                                @else
+                                {{ $lara->duration = floor($lara->duration / 60).':'.($minutes -   floor($lara->duration / 60) * 60)}}
+                                @endif
+                                </button>
                             </div></td>   
                         @else         
                         <td><div class="input-group-append"> <button class="btn  btn-outline-warning btn-sm" >Expired</button></div> </td>
