@@ -24,4 +24,4 @@ Route::get('/CreateLara', 'LaraController@createpage')->name('CreateLara');
 
 Route::post('/CreateLara', ['uses'=> 'LaraController@store','as'=>'lara.store' ]);
 Route::post('/UpdateLara', ['uses'=> 'LaraController@update','as'=>'lara.update' ]);
-Route::delete('/DeleteLara' , ['uses'=>'LaraController@delete','as'=>'lara.delete' ]);
+Route::delete('/DeleteLara' , ['uses'=>'LaraController@destroy','as'=>'lara.delete' ]);
