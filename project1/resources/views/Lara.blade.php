@@ -33,7 +33,7 @@
 
                     <tr>
                     @if($lara->room == '1.1') <td scope="row" class="table-danger b-1" >  @endif
-                    @if($lara->room == '0.3') <td scope="row" class="table-light b-1" > @endif
+                    @if($lara->room == '0.1') <td scope="row" class="table-light b-1" > @endif
                        
                     @if($lara->room == '1.2')     <td scope="row" class="table-primary b-1" >@endif
                     @if($lara->room == '1.3')     <td scope="row" class="table-success b-1" >@endif
