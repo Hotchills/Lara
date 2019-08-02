@@ -32,7 +32,7 @@
 
 
                     <tr>
-                    @if($lara->room == '1.1')    <th scope="row" class="table-light b-1" > 
+                    @if($lara->room == '1.1')    <th scope="row" class="table-info b-1" > 
                         @else
                          <th scope="row" class="table-light b-1" >
                         @endif
