@@ -4,6 +4,9 @@
 
 <div class="container">
     <div class="content" Style="width: 110%;">
+                    <div class="alert alert-danger" Style="display: none;">
+
+            </div>
         <div class="title m-b-md">
             LARA
         </div>
@@ -167,7 +170,7 @@ window.location.reload();
             if (!adress) {                
                	jQuery('.alert-danger').show();
                 jQuery('.alert-danger').append('<p> Please don`t forget the ticket number </p>');
-                  		
+                break;		
             }
             var name = $('#name' + laraID).val();
             if (!name) {

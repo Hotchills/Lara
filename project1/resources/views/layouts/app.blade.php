@@ -97,9 +97,7 @@
             </div>
 
             @endif
-            <div class="alert alert-danger" Style="display: none;">
 
-            </div>
 
             <main class="py-4">
                 @yield('content')
