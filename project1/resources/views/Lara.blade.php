@@ -182,7 +182,9 @@ window.location.reload();
             }
             var duration = $('#duration' + laraID).val();
             if (duration == 'Choose...') {
-                duration = 0;
+                jQuery('.alert-danger').show();
+                jQuery('.alert-danger').append('<p> Please select the duration </p>');
+                return;	
             }
             console.log(laraID);
             console.log(adress);
@@ -202,12 +204,12 @@ window.location.reload();
                                             
                         console.log(data.message);
                         console.log(data['message']);
-//window.location.reload();
+window.location.reload();
                     })
                     .fail(function (data) {
                         console.log(data.errors);
                         console.log('fail');
-            //            window.location.reload();
+                        window.location.reload();
                     });
         });
     });
