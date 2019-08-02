@@ -97,6 +97,7 @@ class LaraController extends Controller {
 
             return response()->json(['message' => 'update done']);
         }
+        }
           return redirect()->back()->with('message', 'New post saved');
         /**
           }else{
