@@ -26,7 +26,23 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php ($room = '1.1')
                     @foreach($laras->slice(2) as $key=>$lara)
+                    @if($room != $lara->room )
+                    @php ($room=$lara->room)
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">link</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Ticket ID</th>
+                        <th scope="col">Servername</th>
+                        <th scope="col">Location</th>                    
+                        <th scope="col">#</th>
+                    </tr>
+
+                    @endif
+
                     <tr>
                         <th scope="row">{{$key+1}}</th>
                         <td scope="row" class="font-weight-bold"> {{$lara->name}}</td>
@@ -70,17 +86,17 @@
 
                         @if( $lara->duration() < ($lara->duration * 60)) 
                         <td class="text-danger font-weight-bold">
-                           
-                               
-                                    @php ($minutes = ($lara->duration * 60) - $lara->duration())
-                                   
-                                @if($minutes <= 60 )
-                                 {{$minutes}} min
-                                @else
-                                {{ $minutes = floor($minutes / 60).'h '.($minutes -   floor($minutes / 60) * 60)}}min
-                                @endif
-                               
-                            </td>   
+
+
+                            @php ($minutes = ($lara->duration * 60) - $lara->duration())
+
+                            @if($minutes <= 60 )
+                            {{$minutes}} min
+                            @else
+                            {{ $minutes = floor($minutes / 60).'h '.($minutes -   floor($minutes / 60) * 60)}}min
+                            @endif
+
+                        </td>   
                         @else         
                         <td class="text-warning font-weight-bold">Expired</td>
                         @endif
@@ -88,7 +104,7 @@
                         @if($lara->adress!='0')<td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}" target="_blank">{{$lara->adress}}</a></td> @else <td> N/A </td> @endif
                         @if($lara->servername!='0') <td>{{$lara->servername}}</td> @else <td> N/A</td> @endif
                         @if($lara->location != '0') <td>{{$lara->location}}</td>@else<td>N/A</td>@endif
-                        
+
                         <td><div class="input-group-append">
                                 <button class="btn  btn-outline-success clearbutton btn-sm" id="clear{{$lara->id}}" type="button">Free</button>
                             </div> </td> 
@@ -137,10 +153,6 @@
                         window.location.reload();
                     });
         });
-
-
-
-
 
         $(".savebutton").click(function () {
 
