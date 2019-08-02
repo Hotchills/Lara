@@ -138,8 +138,11 @@ class LaraController extends Controller {
      * @param  \App\Lara  $lara
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lara $lara) {
+    public function destroy(Request $request) {
         //
+        destroy($request->laraID);
+        
+        return redirect()->back()->with('message', 'Lara removed');
     }
 
 }

@@ -36,6 +36,7 @@
         </div>
 
     </div>
+    </div>
     <div class="container">
 
         <table class="table table-striped">
@@ -65,5 +66,5 @@
         </table>
 
     </div>
-</div>
+
 @endsection
