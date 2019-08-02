@@ -27,7 +27,7 @@
                 </thead>
                 <tbody>
                     @php ($room = '0')
-                    @php ($color = ['light','secondary','success','danger','warning','info','primary','light','light','secondary','success','danger','warning','info','primary','light'])
+                    @php ($color = array('light','secondary','success','danger','warning','info','primary','light','light','secondary','success','danger','warning','info','primary','light'))
                     @php ($i=0)
                     @foreach($laras as $key=>$lara)
 
