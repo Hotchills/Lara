@@ -46,6 +46,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Room</th>
                     <th scope="col">link</th>
+                    <th scope="col">#</th>
                     
                 </tr>
             </thead>
@@ -58,6 +59,13 @@
                     <td class="font-weight-bold"> {{$lara->name}}</td>
                     <td > {{$lara->room}}</td>
                     <td><a href="{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
+                    <td>
+                        {{Form::open(['route'=>'lara.delete','method'=>'DELETE'])}}
+                        {{Form::hidden('laraID',$lara->id)}}
+                                      {{Form::submit('Delete',['class'=>'btn btn-danger'])}}    
+                         {{ Form::close() }}
+                        
+                    </td>
                 </tr>
                 @endforeach
 
