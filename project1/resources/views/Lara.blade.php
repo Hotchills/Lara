@@ -36,7 +36,7 @@
                         @if($room != $lara->room )
                         @php ($room=$lara->room)
                         <th scope="row" class="table-{{$colorp[i]}} b-1" >{{$lara->room}}</th> 
-                        @php ($i=i++)
+                        @php ($i=$i++)
                         @else
                         <th scope="row" class="table-{{$color}}"></th> 
                         @endif
