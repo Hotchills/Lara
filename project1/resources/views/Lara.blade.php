@@ -26,15 +26,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @php ($room = '1.1')
+                    @php ($room = '0')
                     @foreach($laras->slice(2) as $key=>$lara)
                     @if($room != $lara->room )
                     @php ($room=$lara->room)
+                    <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{$lara->room}}</th>             
+                        <th scope="col">Room : {{$lara->room}}</th>             
                     </tr>
-
+                     </thead>
                     @endif
 
                     <tr>
