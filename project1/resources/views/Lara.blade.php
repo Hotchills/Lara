@@ -49,17 +49,17 @@
 
                         <td>
                             <div class="input-group ">
-                                <input id="adress{{$lara->id}}" type="text" class="form-control" placeholder="DCSXB adress" aria-label="DCSXB adress" aria-describedby="button-addon1">
+                                <input id="adress{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="DCSXB adress" aria-label="DCSXB adress" aria-describedby="button-addon1">
                             </div>
                         </td>
                         <td>
                             <div class="input-group ">
-                                <input id="name{{$lara->id}}" type="text" class="form-control" placeholder="Server name" aria-label="Server name" aria-describedby="button-addon1">
+                                <input id="name{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="Server name" aria-label="Server name" aria-describedby="button-addon1">
                             </div>
                         </td>
                         <td>
                             <div class="input-group ">
-                                <input  id="location{{$lara->id}}" type="text" class="form-control" placeholder="Server location" aria-label="Server location" aria-describedby="button-addon1">
+                                <input  id="location{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="Server location" aria-label="Server location" aria-describedby="button-addon1">
                             </div>
                         </td>
 
@@ -70,8 +70,8 @@
                         </td>
                         @else
 
-                        @if( $lara->duration() < ($lara->duration * 60)) <td>
-
+                        @if( $lara->duration() < ($lara->duration * 60)) 
+                        <td>
                             <div class="input-group-append">
                                 <p class="btn  btn-outline-danger btn-sm" >{{$lara->duration()}}min from {{$lara->duration}}h</p>
                             </div></td>   

@@ -18,7 +18,7 @@
            <style>
 .table{
 vertical-align: middle;
-padding:0px;
+padding:0.25rem;
 margin:0px;
 
 
