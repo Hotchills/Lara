@@ -49,17 +49,17 @@
 
                         <td>
                             <div class="input-group ">
-                                <input id="adress{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="DCSXB adress" aria-label="DCSXB adress" aria-describedby="button-addon1">
+                                <input id="adress{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="DCSXB adress" aria-label="DCSXB adress" >
                             </div>
                         </td>
                         <td>
                             <div class="input-group ">
-                                <input id="name{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="Server name" aria-label="Server name" aria-describedby="button-addon1">
+                                <input id="name{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="Server name" aria-label="Server name" >
                             </div>
                         </td>
                         <td>
                             <div class="input-group ">
-                                <input  id="location{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="Server location" aria-label="Server location" aria-describedby="button-addon1">
+                                <input  id="location{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="Server location" aria-label="Server location" >
                             </div>
                         </td>
 
@@ -73,7 +73,7 @@
                         @if( $lara->duration() < ($lara->duration * 60)) 
                         <td>
                             <div class="input-group-append">
-                                <p class="btn  btn-outline-danger btn-sm" >{{$lara->duration()}}min from {{$lara->duration}}h</p>
+                                <button class="btn  btn-outline-danger btn-sm" >{{$lara->duration()}}min from {{$lara->duration}}h</button>
                             </div></td>   
                         @else         
                         <td><div class="input-group-append"> <button class="btn  btn-outline-warning btn-sm" >Expired</button></div> </td>

@@ -23,7 +23,7 @@
 }
 .table td, .table th{
 vertical-align: middle;
-padding:0.25rem;
+padding:0.45rem;
 margin:0px;
 
 }
