@@ -27,8 +27,8 @@
                 </thead>
                 <tbody>
                     @php ($room = '0')
-                    @php ($color = array('light','secondary','success','danger','warning','info','primary','light','light','secondary','success','danger','warning','info','primary','light'))
-                    @php ($i=0)
+                    @php ($color = array("light","secondary","success","danger","warning","info","primary","light"))
+                    
                     @foreach($laras as $key=>$lara)
 
 
@@ -36,7 +36,7 @@
                         @if($room != $lara->room )
                         @php ($room=$lara->room)
                         <th scope="row" class="table-{{$color[0]}} b-1" >{{$lara->room}}</th> 
-                        @php ($i=$i++)
+                      
                         @else
                         <th scope="row" class="table-{{$color}}"></th> 
                         @endif
