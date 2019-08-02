@@ -27,12 +27,15 @@ padding:0.45rem;
 margin:0px;
 
 }
-
+.Textbtn:hover {
+color: #fff !important;
+text-decoration: none;
+}
 .btn{
     
-    padding: .15rem .25rem;
-    font-size: .975rem;
-    line-height: 1.0;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.2;
     border-radius: .2rem;
 }
 

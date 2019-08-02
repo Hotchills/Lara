@@ -29,8 +29,8 @@
                     @foreach($laras as $key=>$lara)
                     <tr>
                         <th scope="row">{{$key+1}}</th>
-                        <td> <h6>{{$lara->name}}</h6></td>
-                        <td><a href="{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
+                        <td scope="row"> <h6>{{$lara->name}}</h6></td>
+                        <td><a href="{{$lara->link}}" target="_blank"><small>{{$lara->link}}</small></a></td>
 
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
 
@@ -38,7 +38,7 @@
                         <td><div class="input-group input-group-sm ">
                                 <select id="duration{{$lara->id}}" class="custom-select btn-sm" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">
                                     <option selected>Choose...</option>
-                                    <option value="0.1">10min</option>
+                                    <option value="0.18">10min</option>
                                     <option value="1">1h</option>
                                     <option value="2">2h</option>
                                     <option value="6">6h</option>
