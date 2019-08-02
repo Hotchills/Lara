@@ -45,7 +45,7 @@
                             @endif
                         </td> 
                         <td class="font-weight-bold"> {{$lara->name}}</td>
-                        <td><a href="{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
+                        <td><a href="https://{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
 
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
 
