@@ -35,7 +35,7 @@
                     <tr>
                         @if($room != $lara->room )
                         @php ($room=$lara->room)
-                        <th scope="row" class="table-{{$color[$i]}} b-1" >{{$lara->room}}</th> 
+                        <th scope="row" class="table-{{$color[0]}} b-1" >{{$lara->room}}</th> 
                         @php ($i=$i++)
                         @else
                         <th scope="row" class="table-{{$color}}"></th> 
