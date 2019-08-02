@@ -14,7 +14,7 @@
             <div class="links">
                 <div class="form-inline">
                     {{Form::open(['route'=>'lara.store','method'=>'POST'])}}
-                    {{Form::text('Lara: ','name',['class'=>'form-control'])}}
+                    {{Form::text('name','Lara ',['class'=>'form-control'])}}
                 </div>
                 <br>
                 <div class="form-inline">
