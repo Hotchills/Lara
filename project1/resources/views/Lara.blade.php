@@ -34,7 +34,8 @@
                     <tr>
                         @if($room != $lara->room )
                         @php ($room=$lara->room)
-                        <th scope="row" class="table-{{$color}}" >{{$lara->room}}</th> 
+                        <th scope="row" class="table-{{$color}} b-1" >{{$lara->room}}</th> 
+                        @php ($color='light')
                         @else
                         <th scope="row" class="table-{{$color}}"></th> 
                         @endif
