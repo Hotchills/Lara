@@ -36,8 +36,7 @@
 
 
                         <td><div class="input-group input-group-sm ">
-                                <select id="duration{{$lara->id}}" class="custom-select btn-sm" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">
-                                   
+                                <select id="duration{{$lara->id}}" class="custom-select btn-sm" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">                                 
                                     <option value="1">1h</option>
                                     <option selected value="2">2h</option>
                                     <option value="6">6h</option>

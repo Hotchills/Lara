@@ -35,7 +35,7 @@ class LaraController extends Controller {
 
         
                 if ($laras = Lara::orderBy('name', 'asc')->get()) {
-
+                $laras = $laras->slice(2);
             return view('/CreateLara', compact('laras'));
         }
         abort(404);
