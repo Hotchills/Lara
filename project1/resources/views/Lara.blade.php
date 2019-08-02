@@ -26,7 +26,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($laras as $key=>$lara)
+                    @foreach($laras->slice(2) as $key=>$lara)
                     <tr>
                         <th scope="row">{{$key+1}}</th>
                         <td scope="row" class="font-weight-bold"> {{$lara->name}}</td>
