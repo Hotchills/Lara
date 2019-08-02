@@ -29,8 +29,8 @@
                     @foreach($laras as $key=>$lara)
                     <tr>
                         <th scope="row">{{$key+1}}</th>
-                        <td scope="row"> <h6>{{$lara->name}}</h6></td>
-                        <td><a href="{{$lara->link}}" target="_blank"><small>{{$lara->link}}</small></a></td>
+                        <td scope="row"> <p class="font-weight-bold">{{$lara->name}}</p></td>
+                        <td><a href="{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
 
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
 
