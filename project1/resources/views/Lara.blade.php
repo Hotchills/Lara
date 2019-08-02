@@ -4,9 +4,9 @@
 
 <div class="container">
     <div class="content" Style="width: 110%;">
-                    <div class="alert alert-danger" Style="display: none;">
+        <div class="alert alert-danger" Style="display: none;">
 
-            </div>
+        </div>
         <div class="title m-b-md">
             LARA
         </div>
@@ -18,10 +18,10 @@
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">link</th>
+                         <th scope="col">Duration</th>
                         <th scope="col">Ticket</th>
                         <th scope="col">Servername</th>
-                        <th scope="col">Location</th>
-                        <th scope="col">Duration</th>
+                        <th scope="col">Location</th>                    
                         <th scope="col">#</th>
                     </tr>
                 </thead>
@@ -34,23 +34,9 @@
 
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
 
+
                         <td>
-                            <div class="input-group mb-3">
-                                <input id="adress{{$lara->id}}" type="text" class="form-control" placeholder="DCSXB adress" aria-label="DCSXB adress" aria-describedby="button-addon1">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-group mb-3">
-                                <input id="name{{$lara->id}}" type="text" class="form-control" placeholder="Server name" aria-label="Server name" aria-describedby="button-addon1">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-group mb-3">
-                                <input  id="location{{$lara->id}}" type="text" class="form-control" placeholder="Server location" aria-label="Server location" aria-describedby="button-addon1">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-group mb-3">
+                            <div class="input-group input-group-sm ">
 
                                 <select id="duration{{$lara->id}}" class="custom-select btn-sm" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">
                                     <option selected>Choose...</option>
@@ -64,12 +50,52 @@
                             </div>
 
                         </td>
+
+
+                        <td>
+                            <div class="input-group ">
+                                <input id="adress{{$lara->id}}" type="text" class="form-control" placeholder="DCSXB adress" aria-label="DCSXB adress" aria-describedby="button-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group ">
+                                <input id="name{{$lara->id}}" type="text" class="form-control" placeholder="Server name" aria-label="Server name" aria-describedby="button-addon1">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group ">
+                                <input  id="location{{$lara->id}}" type="text" class="form-control" placeholder="Server location" aria-label="Server location" aria-describedby="button-addon1">
+                            </div>
+                        </td>
+
                         <td>
                             <div class="input-group-append">
-                                <button class="btn btn-outline-primary savebutton btn-sm" type="button" id="{{$lara->id}}">Save</button>
+                                <button class="btn btn-outline-primary savebutton btn-sm" type="button" id="{{$lara->id}}">Book</button>
                             </div>
                         </td>
                         @else
+
+                        @if( $lara->duration() < ($lara->duration * 60)) <td>
+
+                            <div class="input-group-append">
+                                <p class="btn  btn-outline-danger btn-sm" >{{$lara->duration()}}min from {{$lara->duration}}h</p>
+                            </div>
+                        </td>
+                        @else
+                        <td> 
+                            <div class="input-group-append">
+                                <button class="btn  btn-outline-warning btn-sm" >Expired</button>
+                            </div>
+                        </td>
+                        @endif
+                        <td >
+                            <div class="input-group-append">
+                                <button class="btn  btn-outline-danger clearbutton btn-sm" id="clear{{$lara->id}}" type="button">Free</button>
+                            </div>
+                        </td>
+                        @endif  
+
+
                         @if($lara->adress!='0')
                         <td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}" target="_blank">{{$lara->adress}}</a></td>
 
@@ -93,25 +119,7 @@
                         </td>
                         @endif
 
-                        @if( $lara->duration() < ($lara->duration * 60)) <td>
 
-                            <div class="input-group-append">
-                                <p class="btn  btn-outline-danger btn-sm" >{{$lara->duration()}}min from {{$lara->duration}}h</p>
-                            </div>
-                        </td>
-                        @else
-                        <td> 
-                            <div class="input-group-append">
-                                <button class="btn  btn-outline-success btn-sm" >FREE </button>
-                            </div>
-                        </td>
-                        @endif
-                        <td >
-                            <div class="input-group-append">
-                                <button class="btn  btn-outline-danger clearbutton btn-sm" id="clear{{$lara->id}}" type="button">Free</button>
-                            </div>
-                        </td>
-                        @endif
 
 
                     </tr>
@@ -150,7 +158,7 @@
                     .done(function (data) {
                         console.log(data.message);
                         console.log(data['message']);
-window.location.reload();
+                        window.location.reload();
                     })
                     .fail(function (data) {
                         console.log(data.message);
@@ -164,13 +172,13 @@ window.location.reload();
 
 
         $(".savebutton").click(function () {
-         
+
             var laraID = $(this).attr("id");
             var adress = $('#adress' + laraID).val();
-            if (!adress) {                
-               	jQuery('.alert-danger').show();
+            if (!adress) {
+                jQuery('.alert-danger').show();
                 jQuery('.alert-danger').append('<p> Please don`t forget the ticket number </p>');
-                return;		
+                return;
             }
             var name = $('#name' + laraID).val();
             if (!name) {
@@ -178,14 +186,14 @@ window.location.reload();
             }
             var location = $('#location' + laraID).val();
             if (!location) {
-               
+
                 jQuery('.alert-danger').show();
                 jQuery('.alert-danger').append('<p> Please add location</p>');
-                return;	
+                return;
             }
             var duration = $('#duration' + laraID).val();
             if (duration == 'Choose...') {
-                duration=2;
+                duration = 2;
             }
             console.log(laraID);
             console.log(adress);
@@ -202,10 +210,10 @@ window.location.reload();
                 data: {laraID: laraID, adress: adress, name: name, location: location, duration: duration}
             })
                     .done(function (data) {
-                                            
+
                         console.log(data.message);
                         console.log(data['message']);
-window.location.reload();
+                        window.location.reload();
                     })
                     .fail(function (data) {
                         console.log(data.errors);
