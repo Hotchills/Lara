@@ -14,7 +14,7 @@
             <div class="links">
                 <div class="form-inline">
                     {{Form::open(['route'=>'lara.store','method'=>'POST'])}}
-                    {{Form::text('name','name',['class'=>'form-control'])}}
+                    {{Form::text('Lara ','Lara ',['class'=>'form-control'])}}
                 </div>
                 <br>
                 <div class="form-inline">
@@ -62,7 +62,7 @@
                     <td>
                         {{Form::open(['route'=>'lara.delete','method'=>'DELETE'])}}
                         {{Form::hidden('laraID',$lara->id)}}
-                                      {{Form::submit('Delete',['class'=>'btn btn-danger'])}}    
+                        {{Form::submit('Delete',['class'=>'btn btn-danger'])}}    
                          {{ Form::close() }}
                         
                     </td>
