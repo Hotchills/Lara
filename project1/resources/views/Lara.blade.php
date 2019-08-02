@@ -27,16 +27,16 @@
                 </thead>
                 <tbody>
                     @php ($room = '0')
-                    @php ($color = array("light","secondary","success","danger","warning","info","primary","light"])
+
                     @foreach($laras as $key=>$lara)
 
 
                     <tr>
                         @if($room != $lara->room )
                         @php ($room=$lara->room)
-                        <th scope="row" class="table-{{$color[0]}} b-1" >{{$lara->room}}</th> 
+                        <th scope="row" class="table-light b-1" >{{$lara->room}}</th> 
                         @else
-                        <th scope="row" class="table-{{$color[0]}}"></th> 
+                        <th scope="row" class="table-light"></th> 
                         @endif
                         <td class="font-weight-bold"> {{$lara->name}}</td>
                         <td><a href="{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
