@@ -170,7 +170,7 @@ window.location.reload();
             if (!adress) {                
                	jQuery('.alert-danger').show();
                 jQuery('.alert-danger').append('<p> Please don`t forget the ticket number </p>');
-                break;		
+                return;		
             }
             var name = $('#name' + laraID).val();
             if (!name) {
