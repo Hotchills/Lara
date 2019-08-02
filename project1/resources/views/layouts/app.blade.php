@@ -31,7 +31,7 @@ margin:0px;
 .btn{
     
     padding: .15rem .25rem;
-    font-size: .675rem;
+    font-size: .975rem;
     line-height: 1.0;
     border-radius: .2rem;
 }

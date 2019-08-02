@@ -29,7 +29,7 @@
                     @foreach($laras as $key=>$lara)
                     <tr>
                         <th scope="row">{{$key+1}}</th>
-                        <td>{{$lara->name}}</td>
+                        <td> <h6>{{$lara->name}}</h6></td>
                         <td><a href="{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
 
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
@@ -72,7 +72,7 @@
 
                         @if( $lara->duration() < ($lara->duration * 60)) 
                         <td>
-                            <div class="input-group-append">
+                           
                                 <h6 class="text-danger">
                                     @php ($minutes = ($lara->duration * 60) - $lara->duration())
                                    
@@ -82,9 +82,9 @@
                                 {{ $minutes = floor($minutes / 60).'h '.($minutes -   floor($minutes / 60) * 60)}}min
                                 @endif
                                 </h6>
-                            </div></td>   
+                            </td>   
                         @else         
-                        <td><div class="input-group-append">  <h6 class="text-warning">Expired</h6></div> </td>
+                        <td> <h6 class="text-warning">Expired</h6></td>
                         @endif
 
                         @if($lara->adress!='0')<td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}" target="_blank">{{$lara->adress}}</a></td> @else <td> N/A </td> @endif
