@@ -44,8 +44,8 @@ class LaraController extends Controller {
     public function store(Request $request) {
         
           $validatedData = $request->validate([
-          'name' => 'required|unique:lara|max:50|min:3',
-          'link' => 'required|unique:lara|max:50|min:3',
+          'name' => 'required|unique:laras|max:50|min:3',
+          'link' => 'required|unique:laras|max:50|min:3',
           'room' => 'max:20',
           ]);
         
