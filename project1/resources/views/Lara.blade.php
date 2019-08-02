@@ -35,9 +35,7 @@
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
 
 
-                        <td>
-                            <div class="input-group input-group-sm ">
-
+                        <td><div class="input-group input-group-sm ">
                                 <select id="duration{{$lara->id}}" class="custom-select btn-sm" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">
                                     <option selected>Choose...</option>
                                     <option value="0.1">10min</option>
@@ -46,10 +44,7 @@
                                     <option value="6">6h</option>
                                     <option value="24">24h</option>
                                 </select>
-
-                            </div>
-
-                        </td>
+                            </div> </td>
 
 
                         <td>
@@ -79,49 +74,19 @@
 
                             <div class="input-group-append">
                                 <p class="btn  btn-outline-danger btn-sm" >{{$lara->duration()}}min from {{$lara->duration}}h</p>
-                            </div>
-                        </td>
-                        @else
-                        <td> 
-                            <div class="input-group-append">
-                                <button class="btn  btn-outline-warning btn-sm" >Expired</button>
-                            </div>
-                        </td>
+                            </div></td>   
+                        @else         
+                        <td><div class="input-group-append"> <button class="btn  btn-outline-warning btn-sm" >Expired</button></div> </td>
                         @endif
-                        <td >
-                            <div class="input-group-append">
+                        
+                        <td><div class="input-group-append">
                                 <button class="btn  btn-outline-danger clearbutton btn-sm" id="clear{{$lara->id}}" type="button">Free</button>
-                            </div>
-                        </td>
-                        @endif  
+                            </div> </td> 
 
-
-                        @if($lara->adress!='0')
-                        <td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}" target="_blank">{{$lara->adress}}</a></td>
-
-                        @else
-                        <td> N/A </td>
-                        @endif
-
-                        @if($lara->servername!='0') <td>{{$lara->servername}}</td>
-
-                        @else
-                        <td> N/A
-                        </td>
-                        @endif
-
-
-                        @if($lara->location != '0') <td>{{$lara->location}}</td>
-
-                        @else
-                        <td>N/A
-
-                        </td>
-                        @endif
-
-
-
-
+                        @if($lara->adress!='0')<td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}" target="_blank">{{$lara->adress}}</a></td> @else <td> N/A </td> @endif
+                        @if($lara->servername!='0') <td>{{$lara->servername}}</td> @else <td> N/A</td> @endif
+                        @if($lara->location != '0') <td>{{$lara->location}}</td>@else<td>N/A</td>@endif
+@endif  
                     </tr>
                     @endforeach
                 </tbody>
