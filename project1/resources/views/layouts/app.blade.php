@@ -17,15 +17,13 @@
         <!-- Styles -->
            <style>
 .table{
-vertical-align: middle;
-padding:0.25rem;
-margin:0px;
+
 
 
 }
 .table td, .table th{
 vertical-align: middle;
-padding:0px;
+padding:0.25rem;
 margin:0px;
 
 }
