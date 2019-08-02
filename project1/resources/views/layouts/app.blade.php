@@ -35,6 +35,10 @@ text-align: center;
     line-height: 1.2;
     border-radius: .2rem;
 }
+.input-group{
+    
+    width:80%;
+}
 
 
    </style>
