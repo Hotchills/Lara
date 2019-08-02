@@ -163,9 +163,7 @@ window.location.reload();
         $(".savebutton").click(function () {
             var laraID = $(this).attr("id");
             var adress = $('#adress' + laraID).val();
-            if (!adress) {
-                adress = 0;
-            }
+
             var name = $('#name' + laraID).val();
             if (!name) {
                 name = 0;
@@ -195,12 +193,12 @@ window.location.reload();
                     .done(function (data) {
                         console.log(data.message);
                         console.log(data['message']);
-window.location.reload();
+//window.location.reload();
                     })
                     .fail(function (data) {
                         console.log(data.message);
                         console.log(data);
-                        window.location.reload();
+            //            window.location.reload();
                     });
         });
     });
