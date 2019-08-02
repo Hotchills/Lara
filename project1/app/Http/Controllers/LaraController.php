@@ -140,7 +140,7 @@ class LaraController extends Controller {
      */
     public function destroy(Request $request) {
         //
-        destroy($request->laraID);
+        Lara::destroy($request->laraID);
         
         return redirect()->back()->with('message', 'Lara removed');
     }
