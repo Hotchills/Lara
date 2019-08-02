@@ -73,7 +73,7 @@
                         @if( $lara->duration() < ($lara->duration * 60)) 
                         <td>
                             <div class="input-group-append">
-                                <button class="btn  btn-outline-danger btn-sm" >
+                                <button class="btn  btn-outline-danger btn-sm Textbtn" >
                                     @php ($minutes = ($lara->duration * 60) - $lara->duration())
                                    
                                 @if($minutes < 60 )
@@ -84,7 +84,7 @@
                                 </button>
                             </div></td>   
                         @else         
-                        <td><div class="input-group-append"> <button class="btn  btn-outline-warning btn-sm" >Expired</button></div> </td>
+                        <td><div class="input-group-append"> <button class="btn  btn-outline-warning btn-sm Textbtn" >Expired</button></div> </td>
                         @endif
 
                         @if($lara->adress!='0')<td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}" target="_blank">{{$lara->adress}}</a></td> @else <td> N/A </td> @endif
