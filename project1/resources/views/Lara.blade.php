@@ -27,16 +27,16 @@
                 </thead>
                 <tbody>
                     @php ($room = '0')
-                    @php ($color = ['light','secondary','success','danger','warning','info','primary','light'])
-                    @php ($temp='0')
+                    @php ($color = ['light','secondary','success','danger','warning','info','primary','light','light','secondary','success','danger','warning','info','primary','light'])
+                    @php ($i=0)
                     @foreach($laras as $key=>$lara)
 
 
                     <tr>
                         @if($room != $lara->room )
                         @php ($room=$lara->room)
-                        <th scope="row" class="table-{{$colorp[i]}} b-1" >{{$lara->room}}</th> 
-                        @php ($temp=$temp+1)
+                        <th scope="row" class="table-{{$color[$i]}} b-1" >{{$lara->room}}</th> 
+                        @php ($i=$i++)
                         @else
                         <th scope="row" class="table-{{$color}}"></th> 
                         @endif
