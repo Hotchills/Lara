@@ -32,10 +32,10 @@
 
 
                     <tr>
-                    @if($lara->room == '1.1')    <td scope="row" class="table-info b-1" > 
-                        @else
-                         <td scope="row" class="table-light b-1" >
-                        @endif
+                    @if($lara->room == '1.1')    <td scope="row" class="table-info b-1" >  @endif
+                     @if($lara->room == '0.3') 
+                         <td scope="row" class="table-light b-1" > @endif
+                       
                     @if($lara->room == '1.2')     <td scope="row" class="table-primary b-1" >@endif
                     @if($lara->room == '1.3')     <td scope="row" class="table-success b-1" >@endif
                     @if($lara->room == '2.1/2/2')     <td scope="row" class="table-warning b-1" >@endif
