@@ -164,8 +164,7 @@ window.location.reload();
          
             var laraID = $(this).attr("id");
             var adress = $('#adress' + laraID).val();
-            if (!adress) {
-                
+            if (!adress) {                
                	jQuery('.alert-danger').show();
                 jQuery('.alert-danger').append('<p> Please don`t forget the ticket number </p>');
                   		

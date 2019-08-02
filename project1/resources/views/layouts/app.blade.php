@@ -75,19 +75,19 @@
                     </div>
                 </div>
             </nav>
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    
+            @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+            @endif
+
             @if (session()->has('message'))
             <div class="alert alert-success">
                 {{ session()->get('message') }}
             </div>
             @endif
             @if ($errors->any())
-            
+
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -95,9 +95,11 @@
                     @endforeach
                 </ul>
             </div>
-            
+
             @endif
-                    
+            <div class="alert alert-danger" Style="display: none;">
+
+            </div>
 
             <main class="py-4">
                 @yield('content')
