@@ -196,8 +196,8 @@ window.location.reload();
 //window.location.reload();
                     })
                     .fail(function (data) {
-                        console.log(data.message);
-                        console.log(data);
+                        console.log(data.errors);
+                        console.log('fail');
             //            window.location.reload();
                     });
         });
