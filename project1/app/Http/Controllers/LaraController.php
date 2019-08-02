@@ -72,6 +72,7 @@ class LaraController extends Controller {
         //
         if ($request->ajax()) {
             if ($request->operation =='save') {
+                $request->adress=NULL;
                 $validator = \Validator::make($request->all(), [
                             'adress' => ['required', 'max:50'],
                 ]);
