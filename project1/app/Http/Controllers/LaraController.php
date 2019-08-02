@@ -19,7 +19,7 @@ class LaraController extends Controller {
 
 
 
-        if ($laras = Lara::all()) {
+        if ($laras = Lara::orderBy('name', 'asc')->get()) {
 
             return view('Lara', compact('laras'));
         }
@@ -34,7 +34,7 @@ class LaraController extends Controller {
     public function createpage() {
 
         
-                if ($laras = Lara::all()) {
+                if ($laras = Lara::orderBy('name', 'asc')->get()) {
 
             return view('/CreateLara', compact('laras'));
         }
