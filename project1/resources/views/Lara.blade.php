@@ -18,7 +18,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">link</th>
-                         <th scope="col">Duration</th>
+                        <th scope="col">Duration</th>
                         <th scope="col">Ticket</th>
                         <th scope="col">Servername</th>
                         <th scope="col">Location</th>                    
@@ -78,15 +78,15 @@
                         @else         
                         <td><div class="input-group-append"> <button class="btn  btn-outline-warning btn-sm" >Expired</button></div> </td>
                         @endif
-                        
-                        <td><div class="input-group-append">
-                                <button class="btn  btn-outline-danger clearbutton btn-sm" id="clear{{$lara->id}}" type="button">Free</button>
-                            </div> </td> 
 
                         @if($lara->adress!='0')<td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}" target="_blank">{{$lara->adress}}</a></td> @else <td> N/A </td> @endif
                         @if($lara->servername!='0') <td>{{$lara->servername}}</td> @else <td> N/A</td> @endif
                         @if($lara->location != '0') <td>{{$lara->location}}</td>@else<td>N/A</td>@endif
-@endif  
+                        
+                        <td><div class="input-group-append">
+                                <button class="btn  btn-outline-success clearbutton btn-sm" id="clear{{$lara->id}}" type="button">Free</button>
+                            </div> </td> 
+                        @endif  
                     </tr>
                     @endforeach
                 </tbody>
