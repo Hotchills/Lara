@@ -19,7 +19,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">link</th>
                         <th scope="col">Duration</th>
-                        <th scope="col">Ticket</th>
+                        <th scope="col">Ticket ID</th>
                         <th scope="col">Servername</th>
                         <th scope="col">Location</th>                    
                         <th scope="col">#</th>
@@ -38,7 +38,6 @@
                         <td><div class="input-group input-group-sm ">
                                 <select id="duration{{$lara->id}}" class="custom-select btn-sm" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">
                                     <option selected>Choose...</option>
-                                    <option value="0.18">10min</option>
                                     <option value="1">1h</option>
                                     <option value="2">2h</option>
                                     <option value="6">6h</option>
@@ -49,7 +48,7 @@
 
                         <td>
                             <div class="input-group ">
-                                <input id="adress{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="DCSXB adress" aria-label="DCSXB adress" >
+                                <input id="adress{{$lara->id}}" type="text" class="form-control form-control-sm" placeholder="Ticket ID" aria-label="Ticket ID" >
                             </div>
                         </td>
                         <td>
@@ -76,7 +75,7 @@
                                
                                     @php ($minutes = ($lara->duration * 60) - $lara->duration())
                                    
-                                @if($minutes < 60 )
+                                @if($minutes <= 60 )
                                  {{$minutes}} min
                                 @else
                                 {{ $minutes = floor($minutes / 60).'h '.($minutes -   floor($minutes / 60) * 60)}}min
