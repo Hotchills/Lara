@@ -32,13 +32,7 @@
                     @php ($room=$lara->room)
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">link</th>
-                        <th scope="col">Duration</th>
-                        <th scope="col">Ticket ID</th>
-                        <th scope="col">Servername</th>
-                        <th scope="col">Location</th>                    
-                        <th scope="col">#</th>
+                        <th scope="col">{{$lara->room}}</th>             
                     </tr>
 
                     @endif
