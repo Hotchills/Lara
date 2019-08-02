@@ -191,6 +191,13 @@ window.location.reload();
                 data: {laraID: laraID, adress: adress, name: name, location: location, duration: duration}
             })
                     .done(function (data) {
+                        
+                        jQuery.each(data.errors, function(key, value){
+                  			jQuery('.alert-danger').show();
+                  			jQuery('.alert-danger').append('<p>'+value+'</p>');
+                  		});
+                        
+                        
                         console.log(data.message);
                         console.log(data['message']);
 //window.location.reload();
