@@ -167,7 +167,7 @@ window.location.reload();
             if (!adress) {
                 
                	jQuery('.alert-danger').show();
-                jQuery('.alert-danger').append('<p> Please don`t forget the ticket number' </p>');
+                jQuery('.alert-danger').append('<p> Please don`t forget the ticket number </p>');
                   		
             }
             var name = $('#name' + laraID).val();
