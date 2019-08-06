@@ -116,7 +116,7 @@
                             </button>
                         </td>
                     </tr>
-                    <tr class="collapse" id="collapse{{$lara->id}}">
+                    <div class="collapse" id="collapse{{$lara->id}}">
                 <div class="card card-body">
                     <div class="input-group">
 
@@ -129,7 +129,7 @@
                     </div>
 
                 </div>
-                </tr>
+                </div>
                 @endforeach
 
                 </tbody>
