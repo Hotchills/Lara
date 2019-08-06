@@ -117,10 +117,10 @@
                         </td>
                     </tr>
                     <div class="collapse" id="collapse{{$lara->id}}" Style="position:absolute;width:50%;;top:20%;">
-                <div class="card card-body" Style="z-index:1000;left:20%;width:50%;">
+                <div class="card card-body p-10" Style="z-index:1000;left:20%;width:60%;">
                     <div class="input-group">
 
-                        <textarea class="form-control" aria-label="Paste ticket info here"  rows="5" id="textarea{{$lara->id}}"></textarea>
+                        <textarea class="form-control" aria-label="Paste ticket info here"  rows="6" id="textarea{{$lara->id}}"></textarea>
 
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary findbutton"  type="button" id="find{{$lara->id}}">Find</button>
