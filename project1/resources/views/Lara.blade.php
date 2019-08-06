@@ -123,7 +123,7 @@
                         <textarea class="form-control" aria-label="Paste ticket info here"  rows="6" id="textarea{{$lara->id}}"></textarea>
 
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary findbutton"  type="button" id="find{{$lara->id}}">Find</button>
+                            <button class="btn btn-outline-secondary searchbutton"  type="button" id="search{{$lara->id}}">Find</button>
                         </div>
 
                     </div>
@@ -142,9 +142,9 @@
     $(document).ready(function () {
 
 
-$(".findbutton").click(function () {
+$(".searchbutton").click(function () {
   var id = $(this).attr("id");
-  id = id.slice(4);
+  id = id.slice(6);
    console.log(id);
   var str = $('#textarea' + id).val();
    console.log(str);
