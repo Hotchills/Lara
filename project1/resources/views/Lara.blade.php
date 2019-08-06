@@ -166,7 +166,7 @@
             var laraID = id;
             var adress = ticket;
             var name = servername;
-            var location = Location;
+            var location = Loc;
             var duration = 2;
             
              if (!adress) {
@@ -180,7 +180,6 @@
             }
 
             if (!location) {
-
                 jQuery('.alert-danger').show();
                 jQuery('.alert-danger').append('<p>No location found</p>');
                 return;
