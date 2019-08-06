@@ -109,6 +109,7 @@ class LaraController extends Controller {
 
                 $lara = Lara::find($request->laraID);
                 $lara->duration = 2;
+                $lara->time = Carbon::now()->toDateTimeString();
 
                 $lara->save();
 
