@@ -97,7 +97,7 @@
 
                         </td>   
                         @else         
-                        <td class="text-warning font-weight-bold">Expired</td>
+                        <td class="text-warning font-weight-bold">Expired <button class="btn btn-outline-warning extendbutton btn-sm" type="button" id="extend{{$lara->id}}">+2h</button></td>
                         @endif
 
                         @if($lara->adress!='0')<td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}" target="_blank">{{$lara->adress}}</a></td> @else <td> N/A </td> @endif
@@ -119,6 +119,33 @@
 </div>
 <script>
     $(document).ready(function () {
+        
+        
+        $(".extendbutton").click(function () {
+            var laraID = $(this).attr("id");
+            laraID = laraID.slice(6);
+
+            console.log(laraID);
+            
+            $.ajax({
+                method: "POST",
+                url: 'http://10.81.5.232/ExtendLara',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {laraID: laraID}
+            })
+                    .done(function (data) {
+                        console.log(data.message);
+                        console.log(data['message']);
+                        window.location.reload();
+                    })
+                    .fail(function (data) {
+                        console.log(data.message);
+                        console.log(data);
+                        window.location.reload();
+                    });
+        });
 
         $(".clearbutton").click(function () {
             var laraID = $(this).attr("id");

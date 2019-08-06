@@ -94,7 +94,7 @@ class LaraController extends Controller {
                 return response()->json(['message' => 'update done']);
             
         }
-        return redirect()->back()->with('message', 'New post saved');
+        return redirect()->back()->with('message', 'Error');
         /**
           }else{
 
@@ -103,6 +103,26 @@ class LaraController extends Controller {
          * */
     }
 
+        public function extend(Request $request) {
+        //
+        if ($request->ajax()) {
+
+                $lara = Lara::find($request->laraID);
+                $lara->duration = 2;
+
+                $lara->save();
+
+                return response()->json(['message' => 'update done']);
+            
+        }
+        return redirect()->back()->with('message', 'Error');
+        /**
+          }else{
+
+          return redirect()->action('PageController@indexpage', ['main' => $request->main, 'page' => $request->page])->with('message', 'New post saved');
+          }
+         * */
+    }
     /**
      * Display the specified resource.
      *
