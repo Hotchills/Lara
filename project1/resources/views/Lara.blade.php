@@ -168,7 +168,23 @@
             var name = servername;
             var location = Location;
             var duration = 2;
+            
+             if (!adress) {
+                jQuery('.alert-danger').show();
+                jQuery('.alert-danger').append('<p> No adress found</p>');
+                return;
+            }
 
+            if (!name) {
+                name = 0;
+            }
+
+            if (!location) {
+
+                jQuery('.alert-danger').show();
+                jQuery('.alert-danger').append('<p>No location found</p>');
+                return;
+            }
 
             $.ajax({
                 method: "POST",
