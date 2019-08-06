@@ -19,6 +19,8 @@
                         <th scope="col">Servername</th>
                         <th scope="col">Location</th>                    
                         <th scope="col">#</th>
+                        <th scope="col">#</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -28,15 +30,15 @@
 
 
                     <tr>
-                    @if($lara->room == '1.1') <td scope="row" class="table-info b-1" >  @endif
-                    @if($lara->room == '0.1') <td scope="row" class="table-danger b-1" > @endif
-                       
-                    @if($lara->room == '1.2')     <td scope="row" class="table-primary b-1" >@endif
-                    @if($lara->room == '1.3')     <td scope="row" class="table-success b-1" >@endif
-                    @if($lara->room == '2.1/2.2')     <td scope="row" class="table-warning b-1" >@endif
-                    @if($lara->room == '2.3/2.4')     <td scope="row" class="table-danger b-1" >@endif
-                    @if($lara->room  == '3.2')     <td scope="row" class="table-info b-1" >@endif
-                    @if($lara->room== '0.3')     <td scope="row" class="table-light b-1" >@endif
+                        @if($lara->room == '1.1') <td scope="row" class="table-info b-1" >  @endif
+                            @if($lara->room == '0.1') <td scope="row" class="table-danger b-1" > @endif
+
+                            @if($lara->room == '1.2')     <td scope="row" class="table-primary b-1" >@endif
+                            @if($lara->room == '1.3')     <td scope="row" class="table-success b-1" >@endif
+                            @if($lara->room == '2.1/2.2')     <td scope="row" class="table-warning b-1" >@endif
+                            @if($lara->room == '2.3/2.4')     <td scope="row" class="table-danger b-1" >@endif
+                            @if($lara->room  == '3.2')     <td scope="row" class="table-info b-1" >@endif
+                            @if($lara->room== '0.3')     <td scope="row" class="table-light b-1" >@endif
                             @if($room != $lara->room )
                             @php ($room=$lara->room)
                             {{$lara->room}}
@@ -108,8 +110,27 @@
                                 <button class="btn  btn-outline-success clearbutton btn-sm" id="clear{{$lara->id}}" type="button">Free</button>
                             </div> </td> 
                         @endif  
+                        <td>
+                            <button class="btn  btn-outline-info" type="button" data-toggle="collapse" data-target="#collapse{{$lara->id}}" aria-expanded="false" aria-controls="collapse{{$lara->id}}">
+                                Text
+                            </button>
+                        </td>
                     </tr>
-                    @endforeach
+                    <tr class="collapse" id="collapse{{$lara->id}}">
+                <div class="card card-body">
+                    <div class="input-group">
+
+                        <textarea class="form-control" aria-label="Paste ticket info here" id="textarea{{$lara->id}}"></textarea>
+
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary findbutton"  type="button" id="find{{$lara->id}}">Find</button>
+                        </div>
+
+                    </div>
+
+                </div>
+                </tr>
+                @endforeach
 
                 </tbody>
             </table>
@@ -119,14 +140,37 @@
 </div>
 <script>
     $(document).ready(function () {
-        
-        
+
+
+$(".findbutton").click(function () {
+  var id = $(this).attr("id");
+  id = id.slice(4);
+   console.log(id);
+  var str = $('#textarea' + id).val();
+   console.log(str);
+   
+  var n = str.search("DCSXB");
+   var ticket = str.slice(n);
+  ticket= ticket.substr(0,ticket.indexOf('\n'));
+   console.log(ticket);
+     n = str.search("Location");
+  var Location=str.slice(n+15);
+  Location=Location.substr(0,Location.indexOf('\n'));
+   console.log(Location);
+    n = str.search("Server Name:");
+ var  name=str.slice(n+13);
+ name=name.substr(0,name.indexOf('\n'));
+ 
+ console.log(name);
+  
+  });
+
         $(".extendbutton").click(function () {
             var laraID = $(this).attr("id");
             laraID = laraID.slice(6);
 
             console.log(laraID);
-            
+
             $.ajax({
                 method: "POST",
                 url: 'http://10.81.5.232/ExtendLara',
@@ -177,6 +221,42 @@
                     .fail(function (data) {
                         console.log(data.message);
                         console.log(data);
+                        window.location.reload();
+                    });
+        });
+
+
+        $(".findbutton").click(function () {
+
+            var laraID = $(this).attr("id");
+            var adress = $('#adress' + laraID).val();
+            var name = $('#name' + laraID).val();
+            var location = $('#location' + laraID).val();
+            var duration = $('#duration' + laraID).val();
+
+            console.log(laraID);
+            console.log(adress);
+            console.log(name);
+            console.log(location);
+            console.log(duration);
+
+            $.ajax({
+                method: "POST",
+                url: 'http://10.81.5.232/UpdateLara',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {laraID: laraID, adress: adress, name: name, location: location, duration: duration}
+            })
+                    .done(function (data) {
+
+                        console.log(data.message);
+                        console.log(data['message']);
+                        window.location.reload();
+                    })
+                    .fail(function (data) {
+                        console.log(data.errors);
+                        console.log('fail');
                         window.location.reload();
                     });
         });
