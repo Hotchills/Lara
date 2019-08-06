@@ -117,7 +117,7 @@
                         </td>
                     </tr>
                 <div class="collapse" id="collapse{{$lara->id}}" Style="position:absolute;width:50%;;top:35%;">
-                    <div class="card card-body p-10" Style="z-index:1000;left:20%;width:100%;">
+                    <div class="card card-body p-10" Style="z-index:1000;left:10%;width:50%;">
                         <div class="input-group">
 
                             <textarea class="form-control" aria-label="Paste ticket info here" placeholder="Paste ticket info here" rows="8" id="textarea{{$lara->id}}"></textarea>
