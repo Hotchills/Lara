@@ -116,7 +116,7 @@
                             </button>
                         </td>
                     </tr>
-                    <div class="collapse" id="collapse{{$lara->id}}">
+                    <div class="collapse" id="collapse{{$lara->id}}" Style="position:absolute;width:50%;top:20%;">
                 <div class="card card-body">
                     <div class="input-group">
 
