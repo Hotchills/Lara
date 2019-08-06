@@ -116,19 +116,19 @@
                             </button>
                         </td>
                     </tr>
-                    <div class="collapse" id="collapse{{$lara->id}}" Style="position:absolute;width:50%;;top:40%;">
-                <div class="card card-body p-10" Style="z-index:1000;left:20%;width:80%;">
-                    <div class="input-group">
+                <div class="collapse" id="collapse{{$lara->id}}" Style="position:absolute;width:50%;;top:35%;">
+                    <div class="card card-body p-10" Style="z-index:1000;left:20%;width:100%;">
+                        <div class="input-group">
 
-                        <textarea class="form-control" aria-label="Paste ticket info here"  rows="6" id="textarea{{$lara->id}}"></textarea>
+                            <textarea class="form-control" aria-label="Paste ticket info here"  rows="6" id="textarea{{$lara->id}}"></textarea>
 
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary searchbutton"  type="button" id="search{{$lara->id}}">Find</button>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary searchbutton"  type="button" id="search{{$lara->id}}">Find</button>
+                            </div>
+
                         </div>
 
                     </div>
-
-                </div>
                 </div>
                 @endforeach
 
@@ -142,28 +142,56 @@
     $(document).ready(function () {
 
 
-$(".searchbutton").click(function () {
-  var id = $(this).attr("id");
-  id = id.slice(6);
-   console.log(id);
-  var str = $('#textarea' + id).val();
-   console.log(str);
-   
-  var n = str.search("DCSXB");
-   var ticket = str.slice(n);
-  ticket= ticket.substr(0,ticket.indexOf('\n'));
-   console.log(ticket);
-     n = str.search("Location");
-  var Location=str.slice(n+15);
-  Location=Location.substr(0,Location.indexOf('\n'));
-   console.log(Location);
-    n = str.search("Server Name:");
- var  name=str.slice(n+13);
- name=name.substr(0,name.indexOf('\n'));
- 
- console.log(name);
-  
-  });
+        $(".searchbutton").click(function () {
+            
+            var id = $(this).attr("id");
+            id = id.slice(6);
+            console.log(id);
+            var str = $('#textarea' + id).val();
+            console.log(str);
+
+            var n = str.search("DCSXB");
+            var ticket = str.slice(n);
+            ticket = ticket.substr(0, ticket.indexOf('\n'));
+            console.log(ticket);
+            n = str.search("Location");
+            var Loc = str.slice(n + 15);
+            Loc = Loc.substr(0, Loc.indexOf('\n'));
+            console.log(Loc);
+            n = str.search("Server Name:");
+            var servername = str.slice(n + 13);
+            servername = servername.substr(0, servername.indexOf('\n'));
+            console.log(servername);
+
+            var laraID = id;
+            var adress = ticket;
+            var name = servername;
+            var location = Location;
+            var duration = 2;
+
+
+            $.ajax({
+                method: "POST",
+                url: 'http://10.81.5.232/UpdateLara',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {laraID: laraID, adress: adress, name: name, location: location, duration: duration}
+            })
+                    .done(function (data) {
+
+                        console.log(data.message);
+                        console.log(data['message']);
+                        window.location.reload();
+                    })
+                    .fail(function (data) {
+                        console.log(data.errors);
+                        console.log('fail');
+                        window.location.reload();
+                    });
+
+
+        });
 
         $(".extendbutton").click(function () {
             var laraID = $(this).attr("id");
@@ -226,40 +254,6 @@ $(".searchbutton").click(function () {
         });
 
 
-        $(".findbutton").click(function () {
-
-            var laraID = $(this).attr("id");
-            var adress = $('#adress' + laraID).val();
-            var name = $('#name' + laraID).val();
-            var location = $('#location' + laraID).val();
-            var duration = $('#duration' + laraID).val();
-
-            console.log(laraID);
-            console.log(adress);
-            console.log(name);
-            console.log(location);
-            console.log(duration);
-
-            $.ajax({
-                method: "POST",
-                url: 'http://10.81.5.232/UpdateLara',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                data: {laraID: laraID, adress: adress, name: name, location: location, duration: duration}
-            })
-                    .done(function (data) {
-
-                        console.log(data.message);
-                        console.log(data['message']);
-                        window.location.reload();
-                    })
-                    .fail(function (data) {
-                        console.log(data.errors);
-                        console.log('fail');
-                        window.location.reload();
-                    });
-        });
 
         $(".savebutton").click(function () {
 
