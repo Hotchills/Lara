@@ -32,15 +32,15 @@
 
 
                     <tr>
-                        @if($lara->room == '1.1') <td scope="row" class="table-info font-weight-bold"  Style="padding:0px;">  @endif
-                            @if($lara->room == '0.1') <td scope="row" class="table-danger font-weight-bold"  Style="padding:0px;"> @endif
+                        @if($lara->room == '1.1') <td scope="row" class="table-info font-weight-bold"  >  @endif
+                            @if($lara->room == '0.1') <td scope="row" class="table-danger font-weight-bold"  > @endif
 
-                            @if($lara->room == '1.2')     <td scope="row" class="table-primary font-weight-bold"  Style="padding:0px;">@endif
-                            @if($lara->room == '1.3')     <td scope="row" class="table-success font-weight-bold"  Style="padding:0px;">@endif
-                            @if($lara->room == '2.1/2.2')     <td scope="row" class="table-warning font-weight-bold"  Style="padding:0px;">@endif
-                            @if($lara->room == '2.3/2.4')     <td scope="row" class="table-danger font-weight-bold"  Style="padding:0px;">@endif
-                            @if($lara->room  == '3.2')     <td scope="row" class="table-info font-weight-bold"  Style="padding:0px;">@endif
-                            @if($lara->room== '0.3')     <td scope="row" class="table-light font-weight-bold" Style="padding:0px;" >@endif
+                            @if($lara->room == '1.2')     <td scope="row" class="table-primary font-weight-bold"  >@endif
+                            @if($lara->room == '1.3')     <td scope="row" class="table-success font-weight-bold"  >@endif
+                            @if($lara->room == '2.1/2.2')     <td scope="row" class="table-warning font-weight-bold" >@endif
+                            @if($lara->room == '2.3/2.4')     <td scope="row" class="table-danger font-weight-bold" >@endif
+                            @if($lara->room  == '3.2')     <td scope="row" class="table-info font-weight-bold"  >@endif
+                            @if($lara->room== '0.3')     <td scope="row" class="table-light font-weight-bold"  >@endif
                             @if($room != $lara->room )
                             @php ($room=$lara->room)
                              {{$lara->name}}
@@ -162,15 +162,15 @@
 
 
                     <tr>
-                       @if($lara->room == '1.1') <td scope="row" class="table-info font-weight-bold"  Style="padding:0px;">  @endif
-                            @if($lara->room == '0.1') <td scope="row" class="table-danger font-weight-bold"  Style="padding:0px;"> @endif
+                       @if($lara->room == '1.1') <td scope="row" class="table-info font-weight-bold"  >  @endif
+                            @if($lara->room == '0.1') <td scope="row" class="table-danger font-weight-bold"  > @endif
 
-                            @if($lara->room == '1.2')     <td scope="row" class="table-primary font-weight-bold"  Style="padding:0px;">@endif
-                            @if($lara->room == '1.3')     <td scope="row" class="table-success font-weight-bold"  Style="padding:0px;">@endif
-                            @if($lara->room == '2.1/2.2')     <td scope="row" class="table-warning font-weight-bold"  Style="padding:0px;">@endif
-                            @if($lara->room == '2.3/2.4')     <td scope="row" class="table-danger font-weight-bold"  Style="padding:0px;">@endif
-                            @if($lara->room  == '3.2')     <td scope="row" class="table-info font-weight-bold"  Style="padding:0px;">@endif
-                            @if($lara->room== '0.3')     <td scope="row" class="table-light font-weight-bold" Style="padding:0px;" >@endif
+                            @if($lara->room == '1.2')     <td scope="row" class="table-primary font-weight-bold"  >@endif
+                            @if($lara->room == '1.3')     <td scope="row" class="table-success font-weight-bold"  >@endif
+                            @if($lara->room == '2.1/2.2')     <td scope="row" class="table-warning font-weight-bold"  >@endif
+                            @if($lara->room == '2.3/2.4')     <td scope="row" class="table-danger font-weight-bold"  >@endif
+                            @if($lara->room  == '3.2')     <td scope="row" class="table-info font-weight-bold"  >@endif
+                            @if($lara->room== '0.3')     <td scope="row" class="table-light font-weight-bold"  >@endif
                             @if($room != $lara->room )
                             @php ($room=$lara->room)
                              {{$lara->name}}
