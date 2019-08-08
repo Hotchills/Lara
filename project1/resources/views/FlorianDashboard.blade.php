@@ -2,12 +2,14 @@
 
 @section('content')
 
-<div class="container">
+<div class="">
     <div class="content" Style="width: 110%;">
         <div class="alert alert-danger" Style="display: none;">
 
         </div>
-        <div class="links">
+        
+        
+        <div class="links" Style="width:45%;">
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
