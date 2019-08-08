@@ -9,7 +9,7 @@
         </div>
         
         
-        <div class="" Style="width:45%;float:left;marging:0px;padding:0px;">
+        <div class="" Style="border:1px black solid;width:45%;float:left;marging:0px;padding:0px;">
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -139,7 +139,7 @@
 
         </div>
         
-          <div class="" Style="width:45%;float:left;marging:0px;padding:0px;">
+          <div class="" Style="border:1px black solid;width:45%;float:left;marging:0px;padding:0px;">
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>

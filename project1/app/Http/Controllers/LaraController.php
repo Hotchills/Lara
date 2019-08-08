@@ -28,7 +28,7 @@ class LaraController extends Controller {
         public function onepage() {
         //
         if ($firstlaras = Lara::orderBy('name', 'asc')->take(16)->get()) {
-            if ($lastlaras = Lara::orderBy('name', 'asc')->take(13)->get()){ 
+            if ($lastlaras = Lara::orderBy('name', 'desc')->take(13)->get()){ 
                return view('FlorianDashboard', compact('firstlaras','lastlaras'));
             }
         }
