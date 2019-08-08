@@ -1,7 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-
+<style>
+    
+    .table td, .table th{
+vertical-align: middle;
+padding:0rem;
+margin:0px;
+text-align: center;
+}
+</style>
 <div class="">
     <div class="content" Style="width: 100%;">
         <div class="alert alert-danger" Style="display: none;">
