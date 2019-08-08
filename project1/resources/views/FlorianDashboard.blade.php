@@ -9,7 +9,7 @@
         </div>
         
         
-        <div class="links" Style="width:45%;float:left;">
+        <div class="" Style="width:45%;float:left;marging:0px;padding:0px;">
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -139,7 +139,7 @@
 
         </div>
         
-          <div class="links" Style="width:45%;float:right;">
+          <div class="" Style="width:45%;float:left;marging:0px;padding:0px;">
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
