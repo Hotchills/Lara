@@ -51,6 +51,7 @@
                                 <input  id="location{{$device->id}}" type="text" class="form-control form-control-sm" placeholder="Server location" aria-label="Server location" >
                             </div>
                         </td>
+                        <td>
                           <div class="input-group ">
                                 <input  type="text" class="form-control form-control-sm" placeholder="Time" aria-label="Time" >
                             </div>
