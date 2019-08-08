@@ -3,13 +3,13 @@
 @section('content')
 
 <div class="">
-    <div class="content" Style="width: 110%;">
+    <div class="content" Style="width: 100%;">
         <div class="alert alert-danger" Style="display: none;">
 
         </div>
         
         
-        <div class="" Style="width:47%;float:left;marging:0px;padding:0px;">
+        <div class="" Style="width:45%;float:left;marging:0px;padding:0px;">
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
