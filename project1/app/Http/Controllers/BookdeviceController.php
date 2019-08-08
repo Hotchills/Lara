@@ -16,7 +16,7 @@ class BookdeviceController extends Controller {
      */
     public function index() {
         //
-        return view('/Devices');
+        return view('/BookDevice');
         if ($devices = Bookdevice::orderBy('type', 'asc')->get()) {
             return view('/Devices', compact('devices'));
         }
@@ -30,7 +30,7 @@ class BookdeviceController extends Controller {
      */
     public function createpage() {
 
-
+  return view('/CreateDevice');
         if ($devices = Bookdevice::orderBy('type', 'asc')->get()) {
 
             return view('/CreateDevice', compact('devices'));

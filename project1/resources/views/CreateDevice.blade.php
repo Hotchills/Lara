@@ -19,7 +19,7 @@
                 <br>
 
                 <div class="form-inline">
-                   {{Form::text('type','type',['class'=>'form-control'])}}
+                    {{Form::text('type','type',['class'=>'form-control'])}}
                 </div> 
                 <br>
                 {{Form::submit('Create device',['class'=>'btn btn-primary'])}}    
@@ -30,44 +30,44 @@
         </div>
 
     </div>
-    </div>
+</div>
 
-    <div class="container">
+<div class="container">
 
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">#</th>
-                    
-                </tr>
-            </thead>
-            <tbody>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Location</th>
+                <th scope="col">#</th>
 
-
-                @foreach($devices as $key=>$device)
-                <tr>
-                    <th scope="row">{{$key+1}}</th>
-                    <td class="font-weight-bold"> {{$device->name}}</td>
-                    <td > {{$device->type}}</td>
-                    <td > {{$device->location}}</td>
-                    <td>
-                        {{Form::open(['route'=>'device.delete','method'=>'DELETE'])}}
-                        {{Form::hidden('deviceID',$device->id)}}
-                        {{Form::submit('Delete',['class'=>'btn btn-danger'])}}    
-                        {{ Form::close() }}
-                        
-                    </td>
-                </tr>
-                @endforeach
+            </tr>
+        </thead>
+        <tbody>
 
 
-            </tbody>
-        </table>
+            @foreach($devices as $key=>$device)
+            <tr>
+                <th scope="row">{{$key+1}}</th>
+                <td class="font-weight-bold"> {{$device->name}}</td>
+                <td > {{$device->type}}</td>
+                <td > {{$device->location}}</td>
+                <td>
+                    {{Form::open(['route'=>'device.delete','method'=>'DELETE'])}}
+                    {{Form::hidden('deviceID',$device->id)}}
+                    {{Form::submit('Delete',['class'=>'btn btn-danger'])}}    
+                    {{ Form::close() }}
 
-    </div>
+                </td>
+            </tr>
+            @endforeach
+
+
+        </tbody>
+    </table>
+
+</div>
 
 @endsection
