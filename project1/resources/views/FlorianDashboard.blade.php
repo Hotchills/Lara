@@ -37,7 +37,7 @@ text-align: center;
                     @php ($room = '0')
 
                     @foreach($firstlaras as $key=>$lara)
-@if($lara->room != '0.1' || $lara->room != '0.3' )
+@if($lara->room == '0.1' || $lara->room == '0.3' )
 @else
                     <tr>
                         @if($lara->room == '1.1') <td scope="row" class="table-info font-weight-bold"  Style="padding:0px;">  @endif
