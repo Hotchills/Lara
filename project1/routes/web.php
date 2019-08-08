@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/Lara', 'LaraController@index')->name('Lara');
+Route::get('/FlorianDashboard', 'LaraController@onepage')->name('FlorianDashboard');
 Route::get('/CreateLara', 'LaraController@createpage')->name('CreateLara');
 
 Route::post('/CreateLara', ['uses'=> 'LaraController@store','as'=>'lara.store' ]);

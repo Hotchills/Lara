@@ -24,6 +24,17 @@ class LaraController extends Controller {
         }
         abort(404);
     }
+    
+        public function onepage() {
+        //
+        if ($firstlaras = Lara::orderBy('name', 'asc')->take(16)->get()) {
+            if ($lastlaras = Lara::orderBy('name', 'asc')->take(13)->get()){ 
+               return view('FlorianDashboard', compact('firstlaras','lastlaras'));
+            }
+        }
+        abort(404);
+    }
+    
 
     /**
      * Show the form for creating a new resource.
