@@ -13,7 +13,7 @@
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Room</th>
+                    
                         <th scope="col">Name</th>
                         <th scope="col">link</th>
                         <th scope="col">Duration</th>
@@ -32,23 +32,23 @@
 
 
                     <tr>
-                        @if($lara->room == '1.1') <td scope="row" class="table-info"  Style="padding:0px;">  @endif
-                            @if($lara->room == '0.1') <td scope="row" class="table-danger "  Style="padding:0px;"> @endif
+                        @if($lara->room == '1.1') <td scope="row" class="table-info font-weight-bold"  Style="padding:0px;">  @endif
+                            @if($lara->room == '0.1') <td scope="row" class="table-danger font-weight-bold"  Style="padding:0px;"> @endif
 
-                            @if($lara->room == '1.2')     <td scope="row" class="table-primary "  Style="padding:0px;">@endif
-                            @if($lara->room == '1.3')     <td scope="row" class="table-success "  Style="padding:0px;">@endif
-                            @if($lara->room == '2.1/2.2')     <td scope="row" class="table-warning "  Style="padding:0px;">@endif
-                            @if($lara->room == '2.3/2.4')     <td scope="row" class="table-danger "  Style="padding:0px;">@endif
-                            @if($lara->room  == '3.2')     <td scope="row" class="table-info "  Style="padding:0px;">@endif
-                            @if($lara->room== '0.3')     <td scope="row" class="table-light " Style="padding:0px;" >@endif
+                            @if($lara->room == '1.2')     <td scope="row" class="table-primary font-weight-bold"  Style="padding:0px;">@endif
+                            @if($lara->room == '1.3')     <td scope="row" class="table-success font-weight-bold"  Style="padding:0px;">@endif
+                            @if($lara->room == '2.1/2.2')     <td scope="row" class="table-warning font-weight-bold"  Style="padding:0px;">@endif
+                            @if($lara->room == '2.3/2.4')     <td scope="row" class="table-danger font-weight-bold"  Style="padding:0px;">@endif
+                            @if($lara->room  == '3.2')     <td scope="row" class="table-info font-weight-bold"  Style="padding:0px;">@endif
+                            @if($lara->room== '0.3')     <td scope="row" class="table-light font-weight-bold" Style="padding:0px;" >@endif
                             @if($room != $lara->room )
                             @php ($room=$lara->room)
-                            {{$lara->room}}
+                             {{$lara->name}}
                             @else
-
+                            {{$lara->name}}
                             @endif
                         </td> 
-                        <td class="font-weight-bold">{{$lara->name}}</td>
+
                         <td><a href="https://{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
 
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
@@ -139,11 +139,11 @@
 
         </div>
         
-          <div class="" Style="width:49%;float:left;marging:0px;padding:0px;">
+          <div class="" Style="width:48%;float:left;marging:0px;padding:0px;">
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Room</th>
+                 
                         <th scope="col">Name</th>
                         <th scope="col">link</th>
                         <th scope="col">Duration</th>
@@ -162,22 +162,23 @@
 
 
                     <tr>
-                        @if($lara->room == '1.1') <td scope="row" class="table-info " Style="padding:0px;">  @endif
-                            @if($lara->room == '0.1') <td scope="row" class="table-danger" Style="padding:0px;" > @endif
-                            @if($lara->room == '1.2')     <td scope="row" class="table-primary "  Style="padding:0px;">@endif
-                            @if($lara->room == '1.3')     <td scope="row" class="table-success " Style="padding:0px;" >@endif
-                            @if($lara->room == '2.1/2.2')     <td scope="row" class="table-warning " Style="padding:0px;">@endif
-                            @if($lara->room == '2.3/2.4')     <td scope="row" class="table-danger "  Style="padding:0px;">@endif
-                            @if($lara->room  == '3.2')     <td scope="row" class="table-info "  Style="padding:0px;">@endif
-                            @if($lara->room== '0.3')     <td scope="row" class="table-light "  Style="padding:0px;">@endif
+                       @if($lara->room == '1.1') <td scope="row" class="table-info font-weight-bold"  Style="padding:0px;">  @endif
+                            @if($lara->room == '0.1') <td scope="row" class="table-danger font-weight-bold"  Style="padding:0px;"> @endif
+
+                            @if($lara->room == '1.2')     <td scope="row" class="table-primary font-weight-bold"  Style="padding:0px;">@endif
+                            @if($lara->room == '1.3')     <td scope="row" class="table-success font-weight-bold"  Style="padding:0px;">@endif
+                            @if($lara->room == '2.1/2.2')     <td scope="row" class="table-warning font-weight-bold"  Style="padding:0px;">@endif
+                            @if($lara->room == '2.3/2.4')     <td scope="row" class="table-danger font-weight-bold"  Style="padding:0px;">@endif
+                            @if($lara->room  == '3.2')     <td scope="row" class="table-info font-weight-bold"  Style="padding:0px;">@endif
+                            @if($lara->room== '0.3')     <td scope="row" class="table-light font-weight-bold" Style="padding:0px;" >@endif
                             @if($room != $lara->room )
                             @php ($room=$lara->room)
-                            {{$lara->room}}
+                             {{$lara->name}}
                             @else
-
+                            {{$lara->name}}
                             @endif
                         </td> 
-                        <td class="font-weight-bold">{{$lara->name}}</td>
+                        
                         <td><a href="https://{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
 
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
