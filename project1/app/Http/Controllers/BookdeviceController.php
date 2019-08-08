@@ -18,7 +18,7 @@ class BookdeviceController extends Controller {
         //
       
         if ($devices = Bookdevice::orderBy('type', 'asc')->get()) {
-            return view('/Devices', compact('devices'));
+            return view('/BookDevice', compact('devices'));
         }
         abort(404);
     }
@@ -33,7 +33,7 @@ class BookdeviceController extends Controller {
 
         if ($devices = Bookdevice::orderBy('type', 'asc')->get()) {
 
-            return view('/CreateDevice', compact('devices'));
+            return view('CreateDevice', compact('devices'));
         }
         abort(404);
     }
