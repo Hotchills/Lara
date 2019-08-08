@@ -13,11 +13,11 @@
                     <tr>
                      
                         <th scope="col">Name</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Time of booking</th>
+                        <th scope="col">Type</th>                 
                         <th scope="col">Ticket ID</th>
                         <th scope="col">Server Name</th>
-                        <th scope="col">Location</th>                    
+                        <th scope="col">Location</th> 
+                        <th scope="col">Time of booking</th>
                         <th scope="col">#</th>
               
 
@@ -52,9 +52,7 @@
                             </div>
                         </td>
                         <td>
-                          <div class="input-group ">
-                                <input  type="text" class="form-control form-control-sm" placeholder="Time" aria-label="Time" >
-                            </div>
+
                         </td>
 
                         <td>
