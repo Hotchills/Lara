@@ -64,7 +64,7 @@ class BookdeviceController extends Controller {
 
         $device->save();
 
-        return redirect()->action('BookdeviceController@createpage')->with('message', 'Success');
+        return redirect()->back()->with('message', 'Success');
     }
 
     /**
