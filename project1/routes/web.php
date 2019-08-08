@@ -28,7 +28,7 @@ Route::post('/CreateLara', ['uses'=> 'LaraController@store','as'=>'lara.store' ]
 Route::post('/UpdateLara', ['uses'=> 'LaraController@update','as'=>'lara.update' ]);
 Route::post('/ExtendLara', ['uses'=> 'LaraController@extend','as'=>'lara.extend' ]);
 
-
+Route::post('/CreateDevice', ['uses'=> 'BookdeviceController@store','as'=>'device.store' ]);
 Route::post('/UpdateDevice', ['uses'=> 'BookdeviceController@update','as'=>'device.update' ]);
 
 
