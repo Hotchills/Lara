@@ -45,12 +45,12 @@ class BookdeviceController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-
+/**
         $validatedData = $request->validate([
             'name' => 'required|unique:bookdevices|max:50|min:3',
             'type' => 'required|unique:bookdevices|max:50|min:3',
         ]);
-
+*/
         $device = new Bookdevice();
         $device->name = $request->name;
         $device->type = $request->type;
