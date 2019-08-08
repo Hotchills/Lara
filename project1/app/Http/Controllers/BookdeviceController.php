@@ -29,7 +29,7 @@ class BookdeviceController extends Controller {
      */
     public function createpage() {
 
-
+ return view('/CreateDevice');
         if ($devices = Bookdevice::orderBy('type', 'asc')->get()) {
 
             return view('/CreateDevice', compact('devices'));
