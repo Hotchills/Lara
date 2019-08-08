@@ -139,7 +139,7 @@
 
         </div>
         
-          <div class="" Style="width:48%;float:left;marging:0px;padding:0px;">
+          <div class="" Style="width:49%;float:left;marging:0px;padding:0px;">
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
