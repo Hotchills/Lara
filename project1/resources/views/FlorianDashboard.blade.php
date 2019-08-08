@@ -139,7 +139,7 @@
 
         </div>
         
-          <div class="" Style="width:47%;float:left;marging:0px;padding:0px;">
+          <div class="" Style="width:45%;float:left;marging:0px;padding:0px;">
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -177,7 +177,7 @@
 
                             @endif
                         </td> 
-                        <td class="font-weight-bold"> {{$lara->name}}</td>
+                        <td class="font-weight-bold">{{$lara->name}}</td>
                         <td><a href="https://{{$lara->link}}" target="_blank">{{$lara->link}}</a></td>
 
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
