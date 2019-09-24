@@ -40,9 +40,6 @@ text-align: center;
     width:80%;
 }
 
-.tooltip {
-  position: relative;
-}
 
 .tooltiptext {
   visibility: hidden;
