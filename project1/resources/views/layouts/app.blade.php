@@ -55,7 +55,7 @@ text-align: center;
   z-index: 1;
 }
 
-.tooltip:hover .tooltiptext {
+.text-warning:hover .tooltiptext {
   visibility: visible;
 }
 
