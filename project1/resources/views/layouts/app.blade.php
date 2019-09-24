@@ -38,10 +38,24 @@ text-align: center;
 .input-group{
     left:10%;
     width:80%;
-    z-index: inherit !important;
 }
-.Select-menu-outer{
-    z-index:100;
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 
