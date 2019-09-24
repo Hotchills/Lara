@@ -44,7 +44,7 @@ text-align: center;
   position: relative;
 }
 
-.tooltip .tooltiptext {
+.tooltiptext {
   visibility: hidden;
   width: 120px;
   background-color: black;
