@@ -52,7 +52,7 @@
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
 
 
-                        <td><div class="input-group input-group-sm selectpicker">
+                        <td><div class="input-group input-group-sm ">
                                 <select id="duration{{$lara->id}}" class="custom-select btn-sm" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">                                 
                                     <option value="1">1h</option>
                                     <option selected value="2">2h</option>
@@ -117,7 +117,7 @@
                             </button>
                         </td>
                     </tr>
-                <div class="collapse" id="collapse{{$lara->id}}" Style="position:fixed;width:50%;;top:35%;">
+                <div class="collapse" id="collapse{{$lara->id}}" Style="position:absolute;width:50%;;top:35%;">
                     <div class="card card-body p-10" Style="z-index:1000;left:10%;width:50%;">
                         <div class="input-group">
 
