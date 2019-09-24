@@ -87,7 +87,7 @@
                         @else
 
                         @if( $lara->duration() < ($lara->duration * 60)) 
-                        <td class="text-danger font-weight-bold" data-toggle="tooltip" data-placement="bottom" title="Booked at: {{date("d-m-Y", strtotime($lara->time->modify('+120 minutes')}}">
+                        <td class="text-danger font-weight-bold" data-toggle="tooltip" data-placement="bottom" title="Booked at: {{date("d-m-Y", strtotime($lara->time->modify('+120 minutes')))}}">
 
 
                             @php ($minutes = ($lara->duration * 60) - $lara->duration())
