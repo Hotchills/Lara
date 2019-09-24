@@ -52,7 +52,7 @@
                         @if($lara->adress == '0' && $lara->servername == '0' && $lara->location == '0' && $lara->duration == '0')     
 
 
-                        <td><div class="input-group input-group-sm ">
+                        <td><div class="input-group input-group-sm selectpicker">
                                 <select id="duration{{$lara->id}}" class="custom-select btn-sm" id="inputGroupSelect{{$lara->id}}" aria-label="Selector">                                 
                                     <option value="1">1h</option>
                                     <option selected value="2">2h</option>
