@@ -100,9 +100,7 @@
 
                         </td>   
                         @else         
-                        <td class="text-warning font-weight-bold tooltip"> Expired
-                            <button class="btn btn-outline-warning extendbutton btn-sm" type="button" id="extend{{$lara->id}}">+2h</button> 
-                            <span class="tooltiptext">Booked at: {{date("d.m.Y H:i", strtotime($lara->time->modify('+120 minutes')))}}</span></td>
+                        <td class="text-warning font-weight-bold" data-toggle="tooltip" data-placement="bottom" title="Booked at: {{date("d.m.Y H:i", strtotime($lara->time->modify('+120 minutes')))}}">Expired <button class="btn btn-outline-warning extendbutton btn-sm" type="button" id="extend{{$lara->id}}">+2h</button></td>
                         @endif
 
                         @if($lara->adress!='0')<td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}" target="_blank">{{$lara->adress}}</a></td> @else <td> N/A </td> @endif
