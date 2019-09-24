@@ -40,6 +40,10 @@ text-align: center;
     width:80%;
 }
 
+.tooltip {
+  position: relative;
+}
+
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
@@ -53,6 +57,7 @@ text-align: center;
   position: absolute;
   z-index: 1;
 }
+
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
