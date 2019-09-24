@@ -43,7 +43,7 @@ text-align: center;
 
 .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 230px;
   background-color: black;
   color: #fff;
   text-align: center;
@@ -55,7 +55,7 @@ text-align: center;
   z-index: 1;
 }
 
-.text-warning:hover .tooltiptext {
+.font-weight-bold:hover .tooltiptext {
   visibility: visible;
 }
 

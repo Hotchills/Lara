@@ -87,7 +87,7 @@
                         @else
 
                         @if( $lara->duration() < ($lara->duration * 60)) 
-                        <td class="text-danger font-weight-bold" data-toggle="tooltip" data-placement="bottom" title="Booked at: {{date("d.m.Y H:i", strtotime($lara->time->modify('+120 minutes')))}}">
+                        <td class="text-danger font-weight-bold">
 
 
                             @php ($minutes = ($lara->duration * 60) - $lara->duration())
@@ -97,10 +97,11 @@
                             @else
                             {{ $minutes = floor($minutes / 60).'h '.($minutes -   floor($minutes / 60) * 60)}}min
                             @endif
-
+                            <span  class="tooltiptext" >Booked at: {{date("d.m.Y H:i", strtotime($lara->time->modify('+120 minutes')))}}</span>
                         </td>   
                         @else         
-                        <td class="text-warning font-weight-bold ">Expired <button class="btn btn-outline-warning extendbutton btn-sm" type="button" id="extend{{$lara->id}}">+2h</button><span  class="tooltiptext" >Booked at: {{date("d.m.Y H:i", strtotime($lara->time->modify('+120 minutes')))}}</span></td>
+                        <td class="text-warning font-weight-bold ">Expired <button class="btn btn-outline-warning extendbutton btn-sm" type="button" id="extend{{$lara->id}}">+2h</button>
+                            <span  class="tooltiptext" >Booked at: {{date("d.m.Y H:i", strtotime($lara->time->modify('+120 minutes')))}}</span></td>
                         @endif
 
                         @if($lara->adress!='0')<td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}" target="_blank">{{$lara->adress}}</a></td> @else <td> N/A </td> @endif
