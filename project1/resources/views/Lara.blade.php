@@ -118,7 +118,7 @@
                         </td>
                     </tr>
                
-                <div class="collapse" id="collapse{{$lara->id}}" Style="position:fixed;width:50%;margin:0 5% auto ;top:35%;z-index:1000;">
+                <div class="collapse" id="collapse{{$lara->id}}" Style="position:fixed;width:50%;margin:0 5% auto ;top:30%;z-index:1000;">
                     <div class="card card-body p-10" Style="left:0%;width:100%;">
                         <div class="input-group">
 
