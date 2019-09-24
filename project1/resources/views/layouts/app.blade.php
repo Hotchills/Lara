@@ -36,6 +36,7 @@ text-align: center;
     border-radius: .2rem;
 }
 .input-group{
+    z-index:0;
     left:10%;
     width:80%;
 }
