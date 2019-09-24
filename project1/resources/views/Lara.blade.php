@@ -58,6 +58,7 @@
                                     <option selected value="2">2h</option>
                                     <option value="6">6h</option>
                                     <option value="24">24h</option>
+                                    <option value="168">1week</option>
                                 </select>
                             </div> </td>
 
@@ -155,11 +156,11 @@
             ticket = ticket.substr(0, ticket.indexOf('\n'));
             console.log(ticket);
             n = str.search("Location");
-            var Loc = str.slice(n + 15);
+            var Loc = str.slice(n + 14);
             Loc = Loc.substr(0, Loc.indexOf('\n'));
             console.log(Loc);
             n = str.search("Server Name:");
-            var servername = str.slice(n + 13);
+            var servername = str.slice(n + 12);
             servername = servername.substr(0, servername.indexOf('\n'));
             console.log(servername);
 
