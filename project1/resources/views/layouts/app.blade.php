@@ -38,6 +38,10 @@ text-align: center;
 .input-group{
     left:10%;
     width:80%;
+    z-index: inherit !important;
+}
+.Select-menu-outer{
+    z-index:100;
 }
 
 
