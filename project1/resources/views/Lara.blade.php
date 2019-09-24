@@ -100,7 +100,7 @@
 
                         </td>   
                         @else         
-                        <td class="text-warning font-weight-bold">{{$lara->created_at}} / Exp <button class="btn btn-outline-warning extendbutton btn-sm" type="button" id="extend{{$lara->id}}">+2h</button></td>
+                        <td class="text-warning font-weight-bold">{{$lara->time}} / Exp <button class="btn btn-outline-warning extendbutton btn-sm" type="button" id="extend{{$lara->id}}">+2h</button></td>
                         @endif
 
                         @if($lara->adress!='0')<td><a href="https://jira.godaddy.com/browse/{{$lara->adress}}" target="_blank">{{$lara->adress}}</a></td> @else <td> N/A </td> @endif
